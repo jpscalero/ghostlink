@@ -1,5 +1,9 @@
 # 🔒 GhostLink
 
+![Version](https://img.shields.io/badge/version-v0.0.0.1-blue)
+[![CI](https://github.com/jpscalero/ghostlink/actions/workflows/ci.yml/badge.svg)](https://github.com/jpscalero/ghostlink/actions/workflows/ci.yml)
+![License](https://img.shields.io/badge/license-GPL--3.0-green)
+
 **Ultra-private encrypted messenger with offline capability.**
 
 GhostLink es una aplicación de mensajería cifrada de extremo a extremo que funciona sin necesidad de número de teléfono, email, ni ningún dato personal. Diseñada para funcionar incluso sin conexión a internet usando Bluetooth y redes locales.
@@ -33,20 +37,25 @@ pnpm install
 
 ### 2. Ejecutar la Aplicación
 
-Para poder probar el chat, necesitas arrancar primero el servidor de enrutamiento (Relay) y luego los clientes (App).
-
-**Paso A: Arrancar el Servidor Relay**
-Abre una terminal nueva y ejecuta:
-```bash
-pnpm run relay
-```
-*(Debe aparecer el mensaje "Servidor Relay escuchando en puerto 8080")*
-
-**Paso B: Arrancar los Clientes**
-Abre **dos terminales nuevas** (una para cada cliente simulado) y en cada una ejecuta:
+Por defecto, la aplicación está configurada para conectarse a un **Relay Server de pruebas en la nube** (`wss://ghostlink-2pwd.onrender.com`). Para probarlo, simplemente abre **dos terminales** y ejecuta en ambas:
 ```bash
 pnpm start
 ```
+
+#### Opción Alternativa: Relay Local (Máxima Privacidad)
+Si prefieres no usar el servidor en la nube y ejecutar tu propia infraestructura de enrutamiento:
+1. Edita el archivo `src/renderer.js` y cambia la URL de conexión a `ws://localhost:8080`.
+2. En una terminal nueva, arranca el servidor local:
+   ```bash
+   pnpm run relay
+   ```
+3. En otras dos terminales, arranca los clientes con `pnpm start`.
+
+> [!WARNING]
+> **Privacidad del Relay en la Nube:**
+> 1. El relay actual alojado en Render es una **solución temporal de desarrollo**, no la arquitectura P2P final de privacidad del proyecto.
+> 2. Aunque el contenido de los mensajes viaja 100% cifrado E2E, **el operador del relay puede observar metadatos** de conexión (como direcciones IP de los usuarios y tiempos de envío de paquetes).
+> 3. Se recomienda a quien requiera **máxima privacidad** utilizar `pnpm relay` en su propia infraestructura mientras no exista el modo P2P/offline real.
 
 ### 3. ¿Cómo chatear?
 1. Verás que se abren dos ventanas de GhostLink.
@@ -54,6 +63,16 @@ pnpm start
 3. En la Ventana 2, pega esa clave en la casilla superior y pulsa "Conectar".
 4. ¡Listo! Todo lo que escribas estará cifrado de extremo a extremo de forma militar.
 *(Si solo quieres tomar notas cifradas para ti mismo, puedes pulsar el botón "📝 Notas Personales").*
+
+---
+
+## 📂 Estructura del Código
+
+- `src/main.js`: Proceso principal de Electron (creación de ventanas).
+- `src/renderer.js`: Proceso de renderizado (UI, cliente WebSocket y orquestación).
+- `src/relay.js`: Servidor Node.js ligero para enrutamiento de mensajes (WebSocket).
+- `src/crypto/`: Motor criptográfico central (claves, derivación y cifrado E2E).
+- `tests/`: Pruebas criptográficas automatizadas.
 
 ---
 
