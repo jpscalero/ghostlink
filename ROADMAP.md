@@ -378,13 +378,3 @@ Ejemplo: v0.0.1.0 → v0.0.1.1 → ... → v0.0.1.9 → v0.0.2.0
 | RC | v0.1.0.0 → v0.9.0.9 | **90** | Android + BLE + WiFi + Grupos + Voz + Vault + Sync + CI/CD + i18n |
 | Release | v1.0.0.0 | **1** | Auditoría + Polish + Documentación + Launch |
 | | | **190** | **Total de versiones** |
-
----
-
-## Open Questions
-
-> [!IMPORTANT]
-> **¿Aprobamos este plan y empezamos con v0.0.0.1 (Libsodium Init)?**
-
-> [!IMPORTANT]
-> **¿El nombre del repo será `ghostlink`?** → `github.com/jpscalero/ghostlink`
