@@ -1,0 +1,798 @@
+test (20.x)	Set up job	﻿2026-08-16T16:24:43.6308150Z Current runner version: '2.336.0'
+test (20.x)	Set up job	2026-08-16T16:24:43.6342157Z ##[group]Runner Image Provisioner
+test (20.x)	Set up job	2026-08-16T16:24:43.6343488Z Hosted Compute Agent
+test (20.x)	Set up job	2026-08-16T16:24:43.6344362Z Version: 20260729.566
+test (20.x)	Set up job	2026-08-16T16:24:43.6345418Z Commit: cf7153fe6e25b664e8693c24944bf2b00355d109
+test (20.x)	Set up job	2026-08-16T16:24:43.6346538Z Build Date: 2026-07-29T19:17:02Z
+test (20.x)	Set up job	2026-08-16T16:24:43.6347573Z Worker ID: {dccdbf68-dea4-49de-a37d-03b04eca99d2}
+test (20.x)	Set up job	2026-08-16T16:24:43.6348745Z Azure Region: eastus
+test (20.x)	Set up job	2026-08-16T16:24:43.6349795Z ##[endgroup]
+test (20.x)	Set up job	2026-08-16T16:24:43.6352008Z ##[group]Operating System
+test (20.x)	Set up job	2026-08-16T16:24:43.6352991Z Ubuntu
+test (20.x)	Set up job	2026-08-16T16:24:43.6353759Z 24.04.4
+test (20.x)	Set up job	2026-08-16T16:24:43.6354597Z LTS
+test (20.x)	Set up job	2026-08-16T16:24:43.6355360Z ##[endgroup]
+test (20.x)	Set up job	2026-08-16T16:24:43.6356217Z ##[group]Runner Image
+test (20.x)	Set up job	2026-08-16T16:24:43.6357184Z Image: ubuntu-24.04
+test (20.x)	Set up job	2026-08-16T16:24:43.6358029Z Version: 20260810.271.1
+test (20.x)	Set up job	2026-08-16T16:24:43.6360450Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260810.271/images/ubuntu/Ubuntu2404-Readme.md
+test (20.x)	Set up job	2026-08-16T16:24:43.6363292Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260810.271
+test (20.x)	Set up job	2026-08-16T16:24:43.6364843Z ##[endgroup]
+test (20.x)	Set up job	2026-08-16T16:24:43.6366650Z ##[group]GITHUB_TOKEN Permissions
+test (20.x)	Set up job	2026-08-16T16:24:43.6369345Z Contents: read
+test (20.x)	Set up job	2026-08-16T16:24:43.6370477Z Metadata: read
+test (20.x)	Set up job	2026-08-16T16:24:43.6371437Z Packages: read
+test (20.x)	Set up job	2026-08-16T16:24:43.6372298Z ##[endgroup]
+test (20.x)	Set up job	2026-08-16T16:24:43.6375774Z Secret source: Actions
+test (20.x)	Set up job	2026-08-16T16:24:43.6377503Z Prepare workflow directory
+test (20.x)	Set up job	2026-08-16T16:24:43.6821114Z Prepare all required actions
+test (20.x)	Set up job	2026-08-16T16:24:43.6887700Z Getting action download info
+test (20.x)	Set up job	2026-08-16T16:24:43.8657415Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test (20.x)	Set up job	2026-08-16T16:24:43.9876650Z Download action repository 'pnpm/action-setup@v4' (SHA:b906affcce14559ad1aafd4ab0e942779e9f58b1)
+test (20.x)	Set up job	2026-08-16T16:24:44.1882328Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+test (20.x)	Set up job	2026-08-16T16:24:44.3941749Z Complete job name: test (20.x)
+test (20.x)	Run actions/checkout@v4	﻿2026-08-16T16:24:44.4614977Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4623592Z ##[group]Run actions/checkout@v4
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4624300Z with:
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4624739Z   repository: jpscalero/ghostlink
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4628452Z   token: ***
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4628882Z   ssh-strict: true
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4629317Z   ssh-user: git
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4629949Z   persist-credentials: true
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4630432Z   clean: true
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4630868Z   sparse-checkout-cone-mode: true
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4631375Z   fetch-depth: 1
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4631799Z   fetch-tags: false
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4632223Z   show-progress: true
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4632655Z   lfs: false
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4633081Z   submodules: false
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4633559Z   set-safe-directory: true
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4634058Z   allow-unsafe-pr-checkout: false
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.4634758Z ##[endgroup]
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5654619Z Syncing repository: jpscalero/ghostlink
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5657148Z ##[group]Getting Git version info
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5658232Z Working directory is '/home/runner/work/ghostlink/ghostlink'
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5660011Z [command]/usr/bin/git version
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5739387Z git version 2.54.0
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5760254Z ##[endgroup]
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5785528Z Temporarily overriding HOME='/home/runner/work/_temp/582801ee-4984-468d-bc8a-08d37e0a4241' before making global git config changes
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5790552Z Adding repository directory to the temporary git global config as a safe directory
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5792399Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ghostlink/ghostlink
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5835874Z Deleting the contents of '/home/runner/work/ghostlink/ghostlink'
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5840884Z ##[group]Initializing the repository
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5845838Z [command]/usr/bin/git init /home/runner/work/ghostlink/ghostlink
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5953785Z hint: Using 'master' as the name for the initial branch. This default branch name
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5955186Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5957633Z hint: to use in all of your new repositories, which will suppress this warning,
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5958543Z hint: call:
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5959046Z hint:
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5959998Z hint: 	git config --global init.defaultBranch <name>
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5961136Z hint:
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5962140Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5963696Z hint: 'development'. The just-created branch can be renamed via this command:
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5964951Z hint:
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5965725Z hint: 	git branch -m <name>
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5967875Z hint:
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5969181Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5971622Z Initialized empty Git repository in /home/runner/work/ghostlink/ghostlink/.git/
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.5979272Z [command]/usr/bin/git remote add origin https://github.com/jpscalero/ghostlink
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6061388Z ##[endgroup]
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6062630Z ##[group]Disabling automatic garbage collection
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6066185Z [command]/usr/bin/git config --local gc.auto 0
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6104026Z ##[endgroup]
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6105190Z ##[group]Setting up auth
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6112965Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6174776Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6685843Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6724090Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.6998947Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.7038567Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.7298093Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.7340785Z ##[endgroup]
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.7341586Z ##[group]Fetching the repository
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.7351272Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e8252769a66deb0c0f6abf73620dde63cb01d72d:refs/remotes/origin/main
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9631831Z From https://github.com/jpscalero/ghostlink
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9633639Z  * [new ref]         e8252769a66deb0c0f6abf73620dde63cb01d72d -> origin/main
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9674902Z ##[endgroup]
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9676026Z ##[group]Determining the checkout info
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9678048Z ##[endgroup]
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9686704Z [command]/usr/bin/git sparse-checkout disable
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9743086Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9781681Z ##[group]Checking out the ref
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9786987Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9848892Z Switched to a new branch 'main'
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9851853Z branch 'main' set up to track 'origin/main'.
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9858320Z ##[endgroup]
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9910086Z [command]/usr/bin/git log -1 --format=%H
+test (20.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9940212Z e8252769a66deb0c0f6abf73620dde63cb01d72d
+test (20.x)	Install pnpm	﻿2026-08-16T16:24:45.0237474Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0242891Z ##[group]Run pnpm/action-setup@v4
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0243605Z with:
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0244051Z   version: 9
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0244539Z   dest: ~/setup-pnpm
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0245102Z   run_install: null
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0245625Z   cache: false
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0246178Z   cache_dependency_path: pnpm-lock.yaml
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0247008Z   package_json_file: package.json
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0247745Z   standalone: false
+test (20.x)	Install pnpm	2026-08-16T16:24:45.0248264Z ##[endgroup]
+test (20.x)	Install pnpm	2026-08-16T16:24:45.1688639Z ##[group]Running self-installer...
+test (20.x)	Install pnpm	2026-08-16T16:24:45.5767312Z (node:2193) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test (20.x)	Install pnpm	2026-08-16T16:24:45.5770674Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test (20.x)	Install pnpm	2026-08-16T16:24:45.7043157Z Progress: resolved 1, reused 0, downloaded 0, added 0
+test (20.x)	Install pnpm	2026-08-16T16:24:45.7148447Z Packages: +1
+test (20.x)	Install pnpm	2026-08-16T16:24:45.7149444Z +
+test (20.x)	Install pnpm	2026-08-16T16:24:46.1264988Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+test (20.x)	Install pnpm	2026-08-16T16:24:46.3682332Z 
+test (20.x)	Install pnpm	2026-08-16T16:24:46.3682906Z dependencies:
+test (20.x)	Install pnpm	2026-08-16T16:24:46.3683402Z + pnpm 9.15.9 (11.22.0 is available)
+test (20.x)	Install pnpm	2026-08-16T16:24:46.3683799Z 
+test (20.x)	Install pnpm	2026-08-16T16:24:46.3735845Z Done in 1s
+test (20.x)	Install pnpm	2026-08-16T16:24:46.3995914Z ##[endgroup]
+test (20.x)	Install pnpm	2026-08-16T16:24:46.3996368Z Installation Completed!
+test (20.x)	Use Node.js 20.x	﻿2026-08-16T16:24:46.4295448Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4296744Z ##[group]Run actions/setup-node@v4
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4297044Z with:
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4297249Z   node-version: 20.x
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4297470Z   cache: pnpm
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4297678Z   always-auth: false
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4297905Z   check-latest: false
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4300507Z   token: ***
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4300726Z env:
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4301008Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.4301335Z ##[endgroup]
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.6676706Z Attempting to download 20.x...
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.6801653Z (node:2207) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:46.6802963Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:47.1546026Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:47.4710002Z Extracting ...
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:47.4837629Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/1b65ac03-3167-41f2-85c9-bb6da1a177ee -f /home/runner/work/_temp/a88607a3-b989-4688-b959-d9b798106768
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:48.5840484Z Adding to the cache ...
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:50.1330738Z ##[group]Environment details
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:50.3604027Z node: v20.20.2
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:50.3604395Z npm: 10.8.2
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:50.3604795Z yarn: 1.22.22
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:50.3605557Z ##[endgroup]
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:50.3626662Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:50.7306966Z /home/runner/setup-pnpm/node_modules/.bin/store/v3
+test (20.x)	Use Node.js 20.x	2026-08-16T16:24:50.7886453Z pnpm cache is not found
+test (20.x)	Install dependencies	﻿2026-08-16T16:24:50.8093641Z ##[group]Run pnpm install
+test (20.x)	Install dependencies	2026-08-16T16:24:50.8093970Z ^[[36;1mpnpm install^[[0m
+test (20.x)	Install dependencies	2026-08-16T16:24:50.8140053Z shell: /usr/bin/bash -e {0}
+test (20.x)	Install dependencies	2026-08-16T16:24:50.8140583Z env:
+test (20.x)	Install dependencies	2026-08-16T16:24:50.8140854Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (20.x)	Install dependencies	2026-08-16T16:24:50.8141170Z ##[endgroup]
+test (20.x)	Install dependencies	2026-08-16T16:24:51.2074750Z Lockfile is up to date, resolution step is skipped
+test (20.x)	Install dependencies	2026-08-16T16:24:51.2123144Z Progress: resolved 1, reused 0, downloaded 0, added 0
+test (20.x)	Install dependencies	2026-08-16T16:24:51.2172456Z Packages: +2
+test (20.x)	Install dependencies	2026-08-16T16:24:51.2173129Z ++
+test (20.x)	Install dependencies	2026-08-16T16:24:51.3846784Z Progress: resolved 2, reused 0, downloaded 2, added 2, done
+test (20.x)	Install dependencies	2026-08-16T16:24:51.4103212Z 
+test (20.x)	Install dependencies	2026-08-16T16:24:51.4103914Z dependencies:
+test (20.x)	Install dependencies	2026-08-16T16:24:51.4104441Z + libsodium-wrappers-sumo 0.8.4
+test (20.x)	Install dependencies	2026-08-16T16:24:51.4104737Z 
+test (20.x)	Install dependencies	2026-08-16T16:24:51.4176984Z Done in 570ms using pnpm v9.15.9
+test (20.x)	Run crypto tests	﻿2026-08-16T16:24:51.4301698Z ##[group]Run pnpm test
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.4301969Z ^[[36;1mpnpm test^[[0m
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.4344357Z shell: /usr/bin/bash -e {0}
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.4344620Z env:
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.4344880Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.4345211Z ##[endgroup]
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8090662Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8091674Z > ghostlink@0.0.0.1 test /home/runner/work/ghostlink/ghostlink
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8092809Z > node tests/test-sodium.js
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8093267Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8601869Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8602907Z ╔══════════════════════════════════════════════════╗
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8606321Z ║      🔒 GhostLink v0.0.0.1 — Crypto Tests       ║
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8607107Z ╚══════════════════════════════════════════════════╝
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8607448Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8607743Z ── Inicialización de libsodium ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8782426Z   ✅ libsodium.js WASM cargado correctamente
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8783165Z   ✅ Segunda llamada a initCrypto() es idempotente
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8783514Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8783719Z ── Ed25519 Signing Keypair ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8795545Z   ✅ publicKey es Uint8Array
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8796345Z   ✅ privateKey es Uint8Array
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8797106Z   ✅ publicKey tiene 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8797805Z   ✅ privateKey tiene 64 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8820613Z   ✅ Dos keypairs son diferentes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8821189Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8821599Z ── X25519 DH Keypair ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8822059Z   ✅ DH publicKey tiene 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8822402Z   ✅ DH privateKey tiene 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8822578Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8822983Z ── Conversión Ed25519 → X25519 ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8823779Z   ✅ Ed→X25519 public key tiene 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8824374Z   ✅ Ed→X25519 private key tiene 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8824653Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8825033Z ── Cifrado Simétrico (XChaCha20-Poly1305) ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8825711Z   ✅ Clave simétrica tiene 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8880559Z   ✅ Ciphertext es Uint8Array
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8881689Z   ✅ Nonce tiene 24 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8911323Z   ✅ Ciphertext no está vacío
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8929561Z   ✅ Descifrado produce el mensaje original
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8940767Z   ✅ Cifrado/descifrado de datos binarios funciona
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8942864Z   ✅ Descifrar con clave incorrecta lanza error
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8943537Z   ✅ Descifrar con nonce incorrecto lanza error
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8944318Z   ✅ Descifrar datos manipulados lanza error (autenticación AEAD)
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8945052Z   ✅ AEAD con additional data funciona
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8945639Z   ✅ AEAD falla si additional data es diferente
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8945966Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8946235Z ── Firma Digital (Ed25519) ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8946702Z   ✅ Firma tiene 64 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8947238Z   ✅ Firma válida se verifica correctamente
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8948056Z   ✅ Firma inválida es rechazada
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8948755Z   ✅ Firma con clave incorrecta es rechazada
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8949380Z   ✅ Firma de datos binarios funciona
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8949845Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8950172Z ── Hashing (SHA-256 + BLAKE2b) ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8950708Z   ✅ SHA-256 produce 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8951203Z   ✅ SHA-256 es determinista
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8952333Z   ✅ SHA-256 produce hashes diferentes para inputs diferentes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8953179Z   ✅ BLAKE2b produce 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.8977437Z   ✅ BLAKE2b respeta longitud personalizada
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.9000290Z   ✅ Keyed BLAKE2b es determinista
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.9012393Z   ✅ Keyed BLAKE2b con clave diferente produce hash diferente
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.9012807Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:51.9013100Z ── Key Derivation (Argon2id) ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:52.8417044Z   ✅ Argon2id produce clave de 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:52.8417529Z   ✅ Salt tiene 16 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:53.5766142Z   ✅ Misma passphrase + salt = misma clave
+test (20.x)	Run crypto tests	2026-08-16T16:24:54.3097627Z   ✅ Passphrase diferente = clave diferente
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0438805Z   ✅ Salt diferente = clave diferente
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0439483Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0440267Z ── HKDF (Key Derivation) ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0442968Z   ✅ HKDF produce 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0443821Z   ✅ HKDF con diferente info produce claves diferentes
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0445011Z   ✅ HKDF es determinista
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0445382Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0445869Z ── Diffie-Hellman (X25519) ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0457363Z   ✅ DH shared secret tiene 32 bytes
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0458249Z   ✅ ¡Alice y Bob derivan el MISMO shared secret!
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0462636Z   ✅ Eve NO puede derivar el secret de Alice-Bob
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0463323Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0464023Z ── Random Bytes ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0466669Z   ✅ randomBytes produce longitud correcta
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0467464Z   ✅ Dos llamadas producen bytes diferentes
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0468044Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0468608Z ── Encoding (Hex, Base64, String) ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0469380Z   ✅ toHex produce string
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0470379Z   ✅ Hex de 16 bytes tiene 32 caracteres
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0471255Z   ✅ fromHex es inversa de toHex
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0473639Z   ✅ toBase64 produce string
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0476394Z   ✅ fromBase64 es inversa de toBase64
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0477378Z   ✅ fromString/toString preserva UTF-8 con emojis
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0478000Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.0478726Z ── Flujo Completo: Passphrase → Clave → Cifrar → Descifrar ──
+test (20.x)	Run crypto tests	2026-08-16T16:24:55.7860522Z   ✅ Flujo completo: passphrase → encrypt → decrypt ✅
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5272014Z   ✅ Reabrir app con misma passphrase descifra correctamente
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5272693Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5273838Z ╔══════════════════════════════════════════════════╗
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5274602Z ║  Resultados: 55 ✅ pasaron  0 ❌ fallaron
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5275159Z ╚══════════════════════════════════════════════════╝
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5275388Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5276918Z 🎉 ¡Todos los tests pasaron! Motor criptográfico v0.0.0.1 operativo.
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5277265Z 
+test (20.x)	Run crypto tests	2026-08-16T16:24:56.5534325Z ##[error]The operation was canceled.
+test (20.x)	Post Install pnpm	﻿2026-08-16T16:24:56.5617689Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (20.x)	Post Install pnpm	2026-08-16T16:24:56.5618879Z Post job cleanup.
+test (20.x)	Post Install pnpm	2026-08-16T16:24:56.7078178Z Pruning is unnecessary.
+test (20.x)	Post Run actions/checkout@v4	﻿2026-08-16T16:24:56.7263209Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.7264403Z Post job cleanup.
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8148744Z [command]/usr/bin/git version
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8210458Z git version 2.54.0
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8249981Z Temporarily overriding HOME='/home/runner/work/_temp/acbfc2c2-e835-4ecf-8218-f3991b11bbc3' before making global git config changes
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8290696Z Adding repository directory to the temporary git global config as a safe directory
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8292579Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ghostlink/ghostlink
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8329468Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8374978Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8700410Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8725762Z http.https://github.com/.extraheader
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8748138Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8784865Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.9095124Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (20.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.9166847Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (20.x)	Complete job	﻿2026-08-16T16:24:56.9713855Z Cleaning up orphan processes
+test (20.x)	Complete job	2026-08-16T16:24:56.9935815Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, pnpm/action-setup@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (22.x)	Set up job	﻿2026-08-16T16:24:45.3626342Z Current runner version: '2.336.0'
+test (22.x)	Set up job	2026-08-16T16:24:45.3652364Z ##[group]Runner Image Provisioner
+test (22.x)	Set up job	2026-08-16T16:24:45.3653337Z Hosted Compute Agent
+test (22.x)	Set up job	2026-08-16T16:24:45.3653974Z Version: 20260729.566
+test (22.x)	Set up job	2026-08-16T16:24:45.3654621Z Commit: cf7153fe6e25b664e8693c24944bf2b00355d109
+test (22.x)	Set up job	2026-08-16T16:24:45.3655390Z Build Date: 2026-07-29T19:17:02Z
+test (22.x)	Set up job	2026-08-16T16:24:45.3656049Z Worker ID: {7643a71b-7eeb-4950-af7a-8b2257638c05}
+test (22.x)	Set up job	2026-08-16T16:24:45.3656736Z Azure Region: westus3
+test (22.x)	Set up job	2026-08-16T16:24:45.3657388Z ##[endgroup]
+test (22.x)	Set up job	2026-08-16T16:24:45.3659148Z ##[group]Operating System
+test (22.x)	Set up job	2026-08-16T16:24:45.3659870Z Ubuntu
+test (22.x)	Set up job	2026-08-16T16:24:45.3660398Z 24.04.4
+test (22.x)	Set up job	2026-08-16T16:24:45.3660941Z LTS
+test (22.x)	Set up job	2026-08-16T16:24:45.3661673Z ##[endgroup]
+test (22.x)	Set up job	2026-08-16T16:24:45.3662271Z ##[group]Runner Image
+test (22.x)	Set up job	2026-08-16T16:24:45.3662900Z Image: ubuntu-24.04
+test (22.x)	Set up job	2026-08-16T16:24:45.3663574Z Version: 20260810.271.1
+test (22.x)	Set up job	2026-08-16T16:24:45.3664666Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260810.271/images/ubuntu/Ubuntu2404-Readme.md
+test (22.x)	Set up job	2026-08-16T16:24:45.3666454Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260810.271
+test (22.x)	Set up job	2026-08-16T16:24:45.3667371Z ##[endgroup]
+test (22.x)	Set up job	2026-08-16T16:24:45.3669015Z ##[group]GITHUB_TOKEN Permissions
+test (22.x)	Set up job	2026-08-16T16:24:45.3670972Z Contents: read
+test (22.x)	Set up job	2026-08-16T16:24:45.3672137Z Metadata: read
+test (22.x)	Set up job	2026-08-16T16:24:45.3672694Z Packages: read
+test (22.x)	Set up job	2026-08-16T16:24:45.3673269Z ##[endgroup]
+test (22.x)	Set up job	2026-08-16T16:24:45.3675344Z Secret source: Actions
+test (22.x)	Set up job	2026-08-16T16:24:45.3676379Z Prepare workflow directory
+test (22.x)	Set up job	2026-08-16T16:24:45.4025231Z Prepare all required actions
+test (22.x)	Set up job	2026-08-16T16:24:45.4074207Z Getting action download info
+test (22.x)	Set up job	2026-08-16T16:24:45.7148091Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test (22.x)	Set up job	2026-08-16T16:24:45.8699837Z Download action repository 'pnpm/action-setup@v4' (SHA:b906affcce14559ad1aafd4ab0e942779e9f58b1)
+test (22.x)	Set up job	2026-08-16T16:24:46.7866181Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+test (22.x)	Set up job	2026-08-16T16:24:46.9950388Z Complete job name: test (22.x)
+test (22.x)	Run actions/checkout@v4	﻿2026-08-16T16:24:47.0695715Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0704996Z ##[group]Run actions/checkout@v4
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0705842Z with:
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0706349Z   repository: jpscalero/ghostlink
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0711143Z   token: ***
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0711677Z   ssh-strict: true
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0712153Z   ssh-user: git
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0712643Z   persist-credentials: true
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0713161Z   clean: true
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0713640Z   sparse-checkout-cone-mode: true
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0714195Z   fetch-depth: 1
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0714652Z   fetch-tags: false
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0715134Z   show-progress: true
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0715627Z   lfs: false
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0716098Z   submodules: false
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0716625Z   set-safe-directory: true
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0717165Z   allow-unsafe-pr-checkout: false
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.0718060Z ##[endgroup]
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1757977Z Syncing repository: jpscalero/ghostlink
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1761564Z ##[group]Getting Git version info
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1763034Z Working directory is '/home/runner/work/ghostlink/ghostlink'
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1765173Z [command]/usr/bin/git version
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1864540Z git version 2.54.0
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1921774Z ##[endgroup]
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1946202Z Temporarily overriding HOME='/home/runner/work/_temp/1dd0907a-cf0d-43f0-9ec0-4d89d2f87cb0' before making global git config changes
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1949231Z Adding repository directory to the temporary git global config as a safe directory
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.1952566Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ghostlink/ghostlink
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2011854Z Deleting the contents of '/home/runner/work/ghostlink/ghostlink'
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2020199Z ##[group]Initializing the repository
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2022019Z [command]/usr/bin/git init /home/runner/work/ghostlink/ghostlink
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2159102Z hint: Using 'master' as the name for the initial branch. This default branch name
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2161176Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2163884Z hint: to use in all of your new repositories, which will suppress this warning,
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2166439Z hint: call:
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2168183Z hint:
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2170061Z hint: 	git config --global init.defaultBranch <name>
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2171628Z hint:
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2172940Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2174428Z hint: 'development'. The just-created branch can be renamed via this command:
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2175710Z hint:
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2176649Z hint: 	git branch -m <name>
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2178078Z hint:
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2179808Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2181873Z Initialized empty Git repository in /home/runner/work/ghostlink/ghostlink/.git/
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2185664Z [command]/usr/bin/git remote add origin https://github.com/jpscalero/ghostlink
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2233000Z ##[endgroup]
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2233893Z ##[group]Disabling automatic garbage collection
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2238006Z [command]/usr/bin/git config --local gc.auto 0
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2271130Z ##[endgroup]
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2272644Z ##[group]Setting up auth
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2279262Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2320224Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2741052Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.2778690Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.3006149Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.3045358Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.3274912Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.3328711Z ##[endgroup]
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.3330206Z ##[group]Fetching the repository
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.3344741Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e8252769a66deb0c0f6abf73620dde63cb01d72d:refs/remotes/origin/main
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8155025Z From https://github.com/jpscalero/ghostlink
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8157130Z  * [new ref]         e8252769a66deb0c0f6abf73620dde63cb01d72d -> origin/main
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8196256Z ##[endgroup]
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8197815Z ##[group]Determining the checkout info
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8200064Z ##[endgroup]
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8206040Z [command]/usr/bin/git sparse-checkout disable
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8258917Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8293001Z ##[group]Checking out the ref
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8298599Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8361094Z Switched to a new branch 'main'
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8363983Z branch 'main' set up to track 'origin/main'.
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8370978Z ##[endgroup]
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8415127Z [command]/usr/bin/git log -1 --format=%H
+test (22.x)	Run actions/checkout@v4	2026-08-16T16:24:47.8442360Z e8252769a66deb0c0f6abf73620dde63cb01d72d
+test (22.x)	Install pnpm	﻿2026-08-16T16:24:47.8739539Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8744616Z ##[group]Run pnpm/action-setup@v4
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8745317Z with:
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8745752Z   version: 9
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8746231Z   dest: ~/setup-pnpm
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8746778Z   run_install: null
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8747288Z   cache: false
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8747857Z   cache_dependency_path: pnpm-lock.yaml
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8748973Z   package_json_file: package.json
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8749756Z   standalone: false
+test (22.x)	Install pnpm	2026-08-16T16:24:47.8750346Z ##[endgroup]
+test (22.x)	Install pnpm	2026-08-16T16:24:48.0263562Z ##[group]Running self-installer...
+test (22.x)	Install pnpm	2026-08-16T16:24:48.4714056Z (node:2268) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test (22.x)	Install pnpm	2026-08-16T16:24:48.4721056Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test (22.x)	Install pnpm	2026-08-16T16:24:48.6698829Z Progress: resolved 1, reused 0, downloaded 0, added 0
+test (22.x)	Install pnpm	2026-08-16T16:24:48.6818026Z Packages: +1
+test (22.x)	Install pnpm	2026-08-16T16:24:48.6822746Z +
+test (22.x)	Install pnpm	2026-08-16T16:24:49.0800804Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+test (22.x)	Install pnpm	2026-08-16T16:24:49.1101668Z 
+test (22.x)	Install pnpm	2026-08-16T16:24:49.1102719Z dependencies:
+test (22.x)	Install pnpm	2026-08-16T16:24:49.1104018Z + pnpm 9.15.9 (11.22.0 is available)
+test (22.x)	Install pnpm	2026-08-16T16:24:49.1105033Z 
+test (22.x)	Install pnpm	2026-08-16T16:24:49.1154581Z Done in 877ms
+test (22.x)	Install pnpm	2026-08-16T16:24:49.1359857Z ##[endgroup]
+test (22.x)	Install pnpm	2026-08-16T16:24:49.1361491Z Installation Completed!
+test (22.x)	Use Node.js 22.x	﻿2026-08-16T16:24:49.1725388Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1727619Z ##[group]Run actions/setup-node@v4
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1728580Z with:
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1729260Z   node-version: 22.x
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1729955Z   cache: pnpm
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1730639Z   always-auth: false
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1731351Z   check-latest: false
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1734851Z   token: ***
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1735539Z env:
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1736305Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.1737163Z ##[endgroup]
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.3169333Z Found in cache @ /opt/hostedtoolcache/node/22.23.2/x64
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.3173265Z (node:2282) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.3174793Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.3176844Z ##[group]Environment details
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.7814202Z node: v22.23.2
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.7815104Z npm: 10.9.8
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.7815628Z yarn: 1.22.22
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.7817255Z ##[endgroup]
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:49.7864380Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:50.1961076Z /home/runner/setup-pnpm/node_modules/.bin/store/v3
+test (22.x)	Use Node.js 22.x	2026-08-16T16:24:50.4481292Z pnpm cache is not found
+test (22.x)	Install dependencies	﻿2026-08-16T16:24:50.4622953Z ##[group]Run pnpm install
+test (22.x)	Install dependencies	2026-08-16T16:24:50.4623306Z ^[[36;1mpnpm install^[[0m
+test (22.x)	Install dependencies	2026-08-16T16:24:50.6161257Z shell: /usr/bin/bash -e {0}
+test (22.x)	Install dependencies	2026-08-16T16:24:50.6161613Z env:
+test (22.x)	Install dependencies	2026-08-16T16:24:50.6161895Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (22.x)	Install dependencies	2026-08-16T16:24:50.6162243Z ##[endgroup]
+test (22.x)	Install dependencies	2026-08-16T16:24:51.3631798Z Lockfile is up to date, resolution step is skipped
+test (22.x)	Install dependencies	2026-08-16T16:24:51.3685106Z Progress: resolved 1, reused 0, downloaded 0, added 0
+test (22.x)	Install dependencies	2026-08-16T16:24:51.3747628Z Packages: +2
+test (22.x)	Install dependencies	2026-08-16T16:24:51.3748286Z ++
+test (22.x)	Install dependencies	2026-08-16T16:24:51.6628179Z Progress: resolved 2, reused 0, downloaded 2, added 2, done
+test (22.x)	Install dependencies	2026-08-16T16:24:51.6806242Z 
+test (22.x)	Install dependencies	2026-08-16T16:24:51.6806641Z dependencies:
+test (22.x)	Install dependencies	2026-08-16T16:24:51.6807157Z + libsodium-wrappers-sumo 0.8.4
+test (22.x)	Install dependencies	2026-08-16T16:24:51.6807449Z 
+test (22.x)	Install dependencies	2026-08-16T16:24:51.6884526Z Done in 1s using pnpm v9.15.9
+test (22.x)	Run crypto tests	﻿2026-08-16T16:24:51.7019069Z ##[group]Run pnpm test
+test (22.x)	Run crypto tests	2026-08-16T16:24:51.7019404Z ^[[36;1mpnpm test^[[0m
+test (22.x)	Run crypto tests	2026-08-16T16:24:51.7056462Z shell: /usr/bin/bash -e {0}
+test (22.x)	Run crypto tests	2026-08-16T16:24:51.7056716Z env:
+test (22.x)	Run crypto tests	2026-08-16T16:24:51.7056969Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (22.x)	Run crypto tests	2026-08-16T16:24:51.7057298Z ##[endgroup]
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.0986908Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.0988089Z > ghostlink@0.0.0.1 test /home/runner/work/ghostlink/ghostlink
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.0989290Z > node tests/test-sodium.js
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.0989585Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.1474653Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.1475824Z ╔══════════════════════════════════════════════════╗
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.1477330Z ║      🔒 GhostLink v0.0.0.1 — Crypto Tests       ║
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.1478237Z ╚══════════════════════════════════════════════════╝
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.1478921Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.1479407Z ── Inicialización de libsodium ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2151669Z   ✅ libsodium.js WASM cargado correctamente
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2152900Z   ✅ Segunda llamada a initCrypto() es idempotente
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2153845Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2154379Z ── Ed25519 Signing Keypair ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2167910Z   ✅ publicKey es Uint8Array
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2168922Z   ✅ privateKey es Uint8Array
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2171822Z   ✅ publicKey tiene 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2172480Z   ✅ privateKey tiene 64 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2180052Z   ✅ Dos keypairs son diferentes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2180529Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2180968Z ── X25519 DH Keypair ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2185905Z   ✅ DH publicKey tiene 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2186446Z   ✅ DH privateKey tiene 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2198356Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2198862Z ── Conversión Ed25519 → X25519 ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2200139Z   ✅ Ed→X25519 public key tiene 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2200848Z   ✅ Ed→X25519 private key tiene 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2201221Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2201520Z ── Cifrado Simétrico (XChaCha20-Poly1305) ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2201957Z   ✅ Clave simétrica tiene 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2208124Z   ✅ Ciphertext es Uint8Array
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2209105Z   ✅ Nonce tiene 24 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2209676Z   ✅ Ciphertext no está vacío
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2212803Z   ✅ Descifrado produce el mensaje original
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2230885Z   ✅ Cifrado/descifrado de datos binarios funciona
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2234318Z   ✅ Descifrar con clave incorrecta lanza error
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2236813Z   ✅ Descifrar con nonce incorrecto lanza error
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2237833Z   ✅ Descifrar datos manipulados lanza error (autenticación AEAD)
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2240697Z   ✅ AEAD con additional data funciona
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2241497Z   ✅ AEAD falla si additional data es diferente
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2241904Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2242238Z ── Firma Digital (Ed25519) ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2246951Z   ✅ Firma tiene 64 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2254760Z   ✅ Firma válida se verifica correctamente
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2258831Z   ✅ Firma inválida es rechazada
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2262813Z   ✅ Firma con clave incorrecta es rechazada
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2268730Z   ✅ Firma de datos binarios funciona
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2269111Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2269533Z ── Hashing (SHA-256 + BLAKE2b) ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2273073Z   ✅ SHA-256 produce 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2273660Z   ✅ SHA-256 es determinista
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2274480Z   ✅ SHA-256 produce hashes diferentes para inputs diferentes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2280003Z   ✅ BLAKE2b produce 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2280695Z   ✅ BLAKE2b respeta longitud personalizada
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2283280Z   ✅ Keyed BLAKE2b es determinista
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2286494Z   ✅ Keyed BLAKE2b con clave diferente produce hash diferente
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2286994Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:52.2287376Z ── Key Derivation (Argon2id) ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:53.0854850Z   ✅ Argon2id produce clave de 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:53.0855696Z   ✅ Salt tiene 16 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:53.7595430Z   ✅ Misma passphrase + salt = misma clave
+test (22.x)	Run crypto tests	2026-08-16T16:24:54.4323931Z   ✅ Passphrase diferente = clave diferente
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1109637Z   ✅ Salt diferente = clave diferente
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1109974Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1110196Z ── HKDF (Key Derivation) ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1114187Z   ✅ HKDF produce 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1114985Z   ✅ HKDF con diferente info produce claves diferentes
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1115462Z   ✅ HKDF es determinista
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1115652Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1115850Z ── Diffie-Hellman (X25519) ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1126754Z   ✅ DH shared secret tiene 32 bytes
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1127425Z   ✅ ¡Alice y Bob derivan el MISMO shared secret!
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1132159Z   ✅ Eve NO puede derivar el secret de Alice-Bob
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1132529Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1132713Z ── Random Bytes ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1145691Z   ✅ randomBytes produce longitud correcta
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1146458Z   ✅ Dos llamadas producen bytes diferentes
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1146739Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1147015Z ── Encoding (Hex, Base64, String) ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1147439Z   ✅ toHex produce string
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1148000Z   ✅ Hex de 16 bytes tiene 32 caracteres
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1149110Z   ✅ fromHex es inversa de toHex
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1151315Z   ✅ toBase64 produce string
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1153662Z   ✅ fromBase64 es inversa de toBase64
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1154324Z   ✅ fromString/toString preserva UTF-8 con emojis
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1154610Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.1154988Z ── Flujo Completo: Passphrase → Clave → Cifrar → Descifrar ──
+test (22.x)	Run crypto tests	2026-08-16T16:24:55.7927394Z   ✅ Flujo completo: passphrase → encrypt → decrypt ✅
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4646236Z   ✅ Reabrir app con misma passphrase descifra correctamente
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4646648Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4646988Z ╔══════════════════════════════════════════════════╗
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4647547Z ║  Resultados: 55 ✅ pasaron  0 ❌ fallaron
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4648170Z ╚══════════════════════════════════════════════════╝
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4648767Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4649698Z 🎉 ¡Todos los tests pasaron! Motor criptográfico v0.0.0.1 operativo.
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4650329Z 
+test (22.x)	Run crypto tests	2026-08-16T16:24:56.4993301Z ##[error]The operation was canceled.
+test (22.x)	Post Install pnpm	﻿2026-08-16T16:24:56.5085887Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (22.x)	Post Install pnpm	2026-08-16T16:24:56.5087157Z Post job cleanup.
+test (22.x)	Post Install pnpm	2026-08-16T16:24:56.6593551Z Pruning is unnecessary.
+test (22.x)	Post Run actions/checkout@v4	﻿2026-08-16T16:24:56.6750730Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.6752051Z Post job cleanup.
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.7697626Z [command]/usr/bin/git version
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.7744472Z git version 2.54.0
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.7787832Z Temporarily overriding HOME='/home/runner/work/_temp/0acaf71d-6cd2-4e61-8ca7-5f3d49671f3c' before making global git config changes
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.7789483Z Adding repository directory to the temporary git global config as a safe directory
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.7794178Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ghostlink/ghostlink
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.7836246Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.7874225Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8133962Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8163224Z http.https://github.com/.extraheader
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8176125Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8212853Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8507871Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (22.x)	Post Run actions/checkout@v4	2026-08-16T16:24:56.8551544Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (22.x)	Complete job	﻿2026-08-16T16:24:56.9050395Z Cleaning up orphan processes
+test (22.x)	Complete job	2026-08-16T16:24:56.9269954Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, pnpm/action-setup@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (18.x)	Set up job	﻿2026-08-16T16:24:44.1701867Z Current runner version: '2.336.0'
+test (18.x)	Set up job	2026-08-16T16:24:44.1737606Z ##[group]Runner Image Provisioner
+test (18.x)	Set up job	2026-08-16T16:24:44.1738845Z Hosted Compute Agent
+test (18.x)	Set up job	2026-08-16T16:24:44.1739695Z Version: 20260729.566
+test (18.x)	Set up job	2026-08-16T16:24:44.1740827Z Commit: cf7153fe6e25b664e8693c24944bf2b00355d109
+test (18.x)	Set up job	2026-08-16T16:24:44.1741922Z Build Date: 2026-07-29T19:17:02Z
+test (18.x)	Set up job	2026-08-16T16:24:44.1743071Z Worker ID: {1034b331-08a7-4ea7-8f77-0101daafb02a}
+test (18.x)	Set up job	2026-08-16T16:24:44.1744392Z Azure Region: eastus
+test (18.x)	Set up job	2026-08-16T16:24:44.1745263Z ##[endgroup]
+test (18.x)	Set up job	2026-08-16T16:24:44.1747351Z ##[group]Operating System
+test (18.x)	Set up job	2026-08-16T16:24:44.1748376Z Ubuntu
+test (18.x)	Set up job	2026-08-16T16:24:44.1749227Z 24.04.4
+test (18.x)	Set up job	2026-08-16T16:24:44.1749934Z LTS
+test (18.x)	Set up job	2026-08-16T16:24:44.1750692Z ##[endgroup]
+test (18.x)	Set up job	2026-08-16T16:24:44.1751636Z ##[group]Runner Image
+test (18.x)	Set up job	2026-08-16T16:24:44.1752584Z Image: ubuntu-24.04
+test (18.x)	Set up job	2026-08-16T16:24:44.1753484Z Version: 20260810.271.1
+test (18.x)	Set up job	2026-08-16T16:24:44.1755429Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260810.271/images/ubuntu/Ubuntu2404-Readme.md
+test (18.x)	Set up job	2026-08-16T16:24:44.1758224Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260810.271
+test (18.x)	Set up job	2026-08-16T16:24:44.1759742Z ##[endgroup]
+test (18.x)	Set up job	2026-08-16T16:24:44.1761638Z ##[group]GITHUB_TOKEN Permissions
+test (18.x)	Set up job	2026-08-16T16:24:44.1764548Z Contents: read
+test (18.x)	Set up job	2026-08-16T16:24:44.1765604Z Metadata: read
+test (18.x)	Set up job	2026-08-16T16:24:44.1766428Z Packages: read
+test (18.x)	Set up job	2026-08-16T16:24:44.1767313Z ##[endgroup]
+test (18.x)	Set up job	2026-08-16T16:24:44.1770985Z Secret source: Actions
+test (18.x)	Set up job	2026-08-16T16:24:44.1772862Z Prepare workflow directory
+test (18.x)	Set up job	2026-08-16T16:24:44.2227053Z Prepare all required actions
+test (18.x)	Set up job	2026-08-16T16:24:44.2295518Z Getting action download info
+test (18.x)	Set up job	2026-08-16T16:24:44.3950604Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test (18.x)	Set up job	2026-08-16T16:24:44.4936450Z Download action repository 'pnpm/action-setup@v4' (SHA:b906affcce14559ad1aafd4ab0e942779e9f58b1)
+test (18.x)	Set up job	2026-08-16T16:24:44.6966924Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+test (18.x)	Set up job	2026-08-16T16:24:44.9001591Z Complete job name: test (18.x)
+test (18.x)	Run actions/checkout@v4	﻿2026-08-16T16:24:44.9676766Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9685635Z ##[group]Run actions/checkout@v4
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9686438Z with:
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9686878Z   repository: jpscalero/ghostlink
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9690810Z   token: ***
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9691250Z   ssh-strict: true
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9691689Z   ssh-user: git
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9692130Z   persist-credentials: true
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9692612Z   clean: true
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9693049Z   sparse-checkout-cone-mode: true
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9693549Z   fetch-depth: 1
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9694136Z   fetch-tags: false
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9694579Z   show-progress: true
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9695017Z   lfs: false
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9695451Z   submodules: false
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9695935Z   set-safe-directory: true
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9696431Z   allow-unsafe-pr-checkout: false
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:44.9697118Z ##[endgroup]
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0722289Z Syncing repository: jpscalero/ghostlink
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0725295Z ##[group]Getting Git version info
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0726084Z Working directory is '/home/runner/work/ghostlink/ghostlink'
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0727170Z [command]/usr/bin/git version
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0805071Z git version 2.54.0
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0827025Z ##[endgroup]
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0843733Z Temporarily overriding HOME='/home/runner/work/_temp/4d972760-a4df-4fe2-8831-c99e585f76f7' before making global git config changes
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0845842Z Adding repository directory to the temporary git global config as a safe directory
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0850044Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ghostlink/ghostlink
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0906370Z Deleting the contents of '/home/runner/work/ghostlink/ghostlink'
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0910119Z ##[group]Initializing the repository
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.0915959Z [command]/usr/bin/git init /home/runner/work/ghostlink/ghostlink
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1025784Z hint: Using 'master' as the name for the initial branch. This default branch name
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1026911Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1028151Z hint: to use in all of your new repositories, which will suppress this warning,
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1028886Z hint: call:
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1029285Z hint:
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1029795Z hint: 	git config --global init.defaultBranch <name>
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1030450Z hint:
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1031010Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1031903Z hint: 'development'. The just-created branch can be renamed via this command:
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1032610Z hint:
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1033011Z hint: 	git branch -m <name>
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1033515Z hint:
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1034661Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1040655Z Initialized empty Git repository in /home/runner/work/ghostlink/ghostlink/.git/
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1053005Z [command]/usr/bin/git remote add origin https://github.com/jpscalero/ghostlink
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1109605Z ##[endgroup]
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1110439Z ##[group]Disabling automatic garbage collection
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1111126Z [command]/usr/bin/git config --local gc.auto 0
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1143585Z ##[endgroup]
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1144664Z ##[group]Setting up auth
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1151596Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1190016Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1648932Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1705869Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.1998555Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.2041461Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.2324701Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.2368299Z ##[endgroup]
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.2369728Z ##[group]Fetching the repository
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.2378523Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e8252769a66deb0c0f6abf73620dde63cb01d72d:refs/remotes/origin/main
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4687340Z From https://github.com/jpscalero/ghostlink
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4688663Z  * [new ref]         e8252769a66deb0c0f6abf73620dde63cb01d72d -> origin/main
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4728409Z ##[endgroup]
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4729697Z ##[group]Determining the checkout info
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4731188Z ##[endgroup]
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4738377Z [command]/usr/bin/git sparse-checkout disable
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4791239Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4826188Z ##[group]Checking out the ref
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4830276Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4892871Z Switched to a new branch 'main'
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4895381Z branch 'main' set up to track 'origin/main'.
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4901552Z ##[endgroup]
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4945545Z [command]/usr/bin/git log -1 --format=%H
+test (18.x)	Run actions/checkout@v4	2026-08-16T16:24:45.4974555Z e8252769a66deb0c0f6abf73620dde63cb01d72d
+test (18.x)	Install pnpm	﻿2026-08-16T16:24:45.5253368Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5257295Z ##[group]Run pnpm/action-setup@v4
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5257888Z with:
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5258297Z   version: 9
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5258727Z   dest: ~/setup-pnpm
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5259216Z   run_install: null
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5259675Z   cache: false
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5260150Z   cache_dependency_path: pnpm-lock.yaml
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5260799Z   package_json_file: package.json
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5261384Z   standalone: false
+test (18.x)	Install pnpm	2026-08-16T16:24:45.5261839Z ##[endgroup]
+test (18.x)	Install pnpm	2026-08-16T16:24:45.6732437Z ##[group]Running self-installer...
+test (18.x)	Install pnpm	2026-08-16T16:24:46.1105138Z (node:2230) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test (18.x)	Install pnpm	2026-08-16T16:24:46.1112229Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test (18.x)	Install pnpm	2026-08-16T16:24:46.2677128Z Progress: resolved 1, reused 0, downloaded 0, added 0
+test (18.x)	Install pnpm	2026-08-16T16:24:46.2775510Z Packages: +1
+test (18.x)	Install pnpm	2026-08-16T16:24:46.2779235Z +
+test (18.x)	Install pnpm	2026-08-16T16:24:46.6554662Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+test (18.x)	Install pnpm	2026-08-16T16:24:46.6846862Z 
+test (18.x)	Install pnpm	2026-08-16T16:24:46.6847430Z dependencies:
+test (18.x)	Install pnpm	2026-08-16T16:24:46.6847847Z + pnpm 9.15.9 (11.22.0 is available)
+test (18.x)	Install pnpm	2026-08-16T16:24:46.6848094Z 
+test (18.x)	Install pnpm	2026-08-16T16:24:46.6876028Z Done in 831ms
+test (18.x)	Install pnpm	2026-08-16T16:24:46.7118145Z ##[endgroup]
+test (18.x)	Install pnpm	2026-08-16T16:24:46.7119170Z Installation Completed!
+test (18.x)	Use Node.js 18.x	﻿2026-08-16T16:24:46.7404199Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7405640Z ##[group]Run actions/setup-node@v4
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7405975Z with:
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7406233Z   node-version: 18.x
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7406523Z   cache: pnpm
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7406806Z   always-auth: false
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7407081Z   check-latest: false
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7409754Z   token: ***
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7410016Z env:
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7410354Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.7410736Z ##[endgroup]
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.8844607Z Attempting to download 18.x...
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.8950740Z (node:2244) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:46.8951812Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:47.3938101Z Acquiring 18.20.8 - x64 from https://github.com/actions/node-versions/releases/download/18.20.8-14110393767/node-18.20.8-linux-x64.tar.gz
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:47.7462342Z Extracting ...
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:47.7585411Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/87ea7587-38cd-4931-b4d7-d4d8b0dbb37c -f /home/runner/work/_temp/3e9a4214-2cd6-4620-815e-ee6eff222835
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:48.7935303Z Adding to the cache ...
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:50.4512928Z ##[group]Environment details
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:50.6895393Z node: v18.20.8
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:50.6895948Z npm: 10.8.2
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:50.6896290Z yarn: 1.22.22
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:50.6896970Z ##[endgroup]
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:50.6915397Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:51.0935083Z /home/runner/setup-pnpm/node_modules/.bin/store/v3
+test (18.x)	Use Node.js 18.x	2026-08-16T16:24:51.1496688Z pnpm cache is not found
+test (18.x)	Install dependencies	﻿2026-08-16T16:24:51.1700641Z ##[group]Run pnpm install
+test (18.x)	Install dependencies	2026-08-16T16:24:51.1700996Z ^[[36;1mpnpm install^[[0m
+test (18.x)	Install dependencies	2026-08-16T16:24:51.1746834Z shell: /usr/bin/bash -e {0}
+test (18.x)	Install dependencies	2026-08-16T16:24:51.1747363Z env:
+test (18.x)	Install dependencies	2026-08-16T16:24:51.1747634Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (18.x)	Install dependencies	2026-08-16T16:24:51.1747948Z ##[endgroup]
+test (18.x)	Install dependencies	2026-08-16T16:24:51.6172128Z Lockfile is up to date, resolution step is skipped
+test (18.x)	Install dependencies	2026-08-16T16:24:51.6238305Z Progress: resolved 1, reused 0, downloaded 0, added 0
+test (18.x)	Install dependencies	2026-08-16T16:24:51.6289044Z Packages: +2
+test (18.x)	Install dependencies	2026-08-16T16:24:51.6289817Z ++
+test (18.x)	Install dependencies	2026-08-16T16:24:51.7963142Z Progress: resolved 2, reused 0, downloaded 2, added 2, done
+test (18.x)	Install dependencies	2026-08-16T16:24:51.8203698Z 
+test (18.x)	Install dependencies	2026-08-16T16:24:51.8204447Z dependencies:
+test (18.x)	Install dependencies	2026-08-16T16:24:51.8205106Z + libsodium-wrappers-sumo 0.8.4
+test (18.x)	Install dependencies	2026-08-16T16:24:51.8205511Z 
+test (18.x)	Install dependencies	2026-08-16T16:24:51.8280136Z Done in 617ms using pnpm v9.15.9
+test (18.x)	Run crypto tests	﻿2026-08-16T16:24:51.8414522Z ##[group]Run pnpm test
+test (18.x)	Run crypto tests	2026-08-16T16:24:51.8414806Z ^[[36;1mpnpm test^[[0m
+test (18.x)	Run crypto tests	2026-08-16T16:24:51.8457662Z shell: /usr/bin/bash -e {0}
+test (18.x)	Run crypto tests	2026-08-16T16:24:51.8457920Z env:
+test (18.x)	Run crypto tests	2026-08-16T16:24:51.8458169Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+test (18.x)	Run crypto tests	2026-08-16T16:24:51.8458502Z ##[endgroup]
+test (18.x)	Run crypto tests	2026-08-16T16:24:52.2539174Z 
+test (18.x)	Run crypto tests	2026-08-16T16:24:52.2540336Z > ghostlink@0.0.0.1 test /home/runner/work/ghostlink/ghostlink
+test (18.x)	Run crypto tests	2026-08-16T16:24:52.2541079Z > node tests/test-sodium.js
+test (18.x)	Run crypto tests	2026-08-16T16:24:52.2541343Z 
+test (18.x)	Run crypto tests	2026-08-16T16:24:52.3081591Z file:///home/runner/work/ghostlink/ghostlink/node_modules/.pnpm/libsodium-wrappers-sumo@0.8.4/node_modules/libsodium-wrappers-sumo/dist/modules-sumo-esm/libsodium-wrappers.mjs:1
+test (18.x)	Run crypto tests	2026-08-16T16:24:52.3132288Z  ELIFECYCLE  Test failed. See above for more details.
+test (18.x)	Run crypto tests	2026-08-16T16:24:52.3569616Z import e from"libsodium-sumo";let r;const t={};if(void 0===globalThis.crypto||"function"!=typeof globalThis.crypto.getRandomValues)throw new Error("globalThis.crypto.getRandomValues is not available. The ESM build of libsodium requires a secure random source (available in all browsers and Node.js 19+).");const a="function"==typeof(_=e)?_:null!=_&&"function"==typeof _.default?_.default:null;var _;const n=function(e){return null!=e&&void 0!==e.ready?e:null!=e&&null!=e.default&&void 0!==e.default.ready?e.default:null}(e),s=(null!=a?a({getRandomValue:function(){var e=new Uint32Array(1);return globalThis.crypto.getRandomValues(e),e[0]>>>0}}):null!=n?n.ready.then(function(){return n}):Promise.reject(new Error("Unsupported libsodium ESM export shape"))).then(function(e){r=e,t.libsodium=r,function(){if(r._sodium_init()<0)throw new Error("libsodium was not correctly initialized.");for(var e=["crypto_aead_aegis128l_decrypt","crypto_aead_aegis128l_decrypt_detached","crypto_aead_aegis128l_encrypt","crypto_aead_aegis128l_encrypt_detached","crypto_aead_aegis128l_keygen","crypto_aead_aegis256_decrypt","crypto_aead_aegis256_decrypt_detached","crypto_aead_aegis256_encrypt","crypto_aead_aegis256_encrypt_detached","crypto_aead_aegis256_keygen","crypto_aead_chacha20poly1305_decrypt","crypto_aead_chacha20poly1305_decrypt_detached","crypto_aead_chacha20poly1305_encrypt","crypto_aead_chacha20poly1305_encrypt_detached","crypto_aead_chacha20poly1305_ietf_decrypt","crypto_aead_chacha20poly1305_ietf_decrypt_detached","crypto_aead_chacha20poly1305_ietf_encrypt","crypto_aead_chacha20poly1305_ietf_encrypt_detached","crypto_aead_chacha20poly1305_ietf_keygen","crypto_aead_chacha20poly1305_keygen","crypto_aead_xchacha20poly1305_ietf_decrypt","crypto_aead_xchacha20poly1305_ietf_decrypt_detached","crypto_aead_xchacha20poly1305_ietf_encrypt","crypto_aead_xchacha20poly1305_ietf_encrypt_detached","crypto_aead_xchacha20poly1305_ietf_keygen","crypto_auth","crypto_auth_hmacsha256","crypto_auth_hmacsha256_final","crypto_auth_hmacsha256_init","crypto_auth_hmacsha256_keygen","crypto_auth_hmacsha256_update","crypto_auth_hmacsha256_verify","crypto_auth_hmacsha512","crypto_auth_hmacsha512256","crypto_auth_hmacsha512256_final","crypto_auth_hmacsha512256_init","crypto_auth_hmacsha512256_keygen","crypto_auth_hmacsha512256_update","crypto_auth_hmacsha512256_verify","crypto_auth_hmacsha512_final","crypto_auth_hmacsha512_init","crypto_auth_hmacsha512_keygen","crypto_auth_hmacsha512_update","crypto_auth_hmacsha512_verify","crypto_auth_keygen","crypto_auth_verify","crypto_box_beforenm","crypto_box_curve25519xchacha20poly1305_beforenm","crypto_box_curve25519xchacha20poly1305_detached","crypto_box_curve25519xchacha20poly1305_detached_afternm","crypto_box_curve25519xchacha20poly1305_easy","crypto_box_curve25519xchacha20poly1305_easy_afternm","crypto_box_curve25519xchacha20poly1305_keypair","crypto_box_curve25519xchacha20poly1305_open_detached","crypto_box_curve25519xchacha20poly1305_open_detached_afternm","crypto_box_curve25519xchacha20poly1305_open_easy","crypto_box_curve25519xchacha20poly1305_open_easy_afternm","crypto_box_curve25519xchacha20poly1305_seal","crypto_box_curve25519xchacha20poly1305_seal_open","crypto_box_curve25519xchacha20poly1305_seed_keypair","crypto_box_detached","crypto_box_easy","crypto_box_easy_afternm","crypto_box_keypair","crypto_box_open_detached","crypto_box_open_easy","crypto_box_open_easy_afternm","crypto_box_seal","crypto_box_seal_open","crypto_box_seed_keypair","crypto_core_ed25519_add","crypto_core_ed25519_from_hash","crypto_core_ed25519_from_uniform","crypto_core_ed25519_is_valid_point","crypto_core_ed25519_random","crypto_core_ed25519_scalar_add","crypto_core_ed25519_scalar_complement","crypto_core_ed25519_scalar_invert","crypto_core_ed25519_scalar_mul","crypto_core_ed25519_scalar_negate","crypto_core_ed25519_scalar_random","crypto_core_ed25519_scalar_reduce","crypto_core_ed25519_scalar_sub","crypto_core_ed25519_sub","crypto_core_hchacha20","crypto_core_hsalsa20","crypto_core_ristretto255_add","crypto_core_ristretto255_from_hash","crypto_core_ristretto255_is_valid_point","crypto_core_ristretto255_random","crypto_core_ristretto255_scalar_add","crypto_core_ristretto255_scalar_complement","crypto_core_ristretto255_scalar_invert","crypto_core_ristretto255_scalar_mul","crypto_core_ristretto255_scalar_negate","crypto_core_ristretto255_scalar_random","crypto_core_ristretto255_scalar_reduce","crypto_core_ristretto255_scalar_sub","crypto_core_ristretto255_sub","crypto_generichash","crypto_generichash_blake2b_salt_personal","crypto_generichash_final","crypto_generichash_init","crypto_generichash_keygen","crypto_generichash_update","crypto_hash","crypto_hash_sha256","crypto_hash_sha256_final","crypto_hash_sha256_init","crypto_hash_sha256_update","crypto_hash_sha3256","crypto_hash_sha3256_final","crypto_hash_sha3256_init","crypto_hash_sha3256_update","crypto_hash_sha3512","crypto_hash_sha3512_final","crypto_hash_sha3512_init","crypto_hash_sha3512_update","crypto_hash_sha512","crypto_hash_sha512_final","crypto_hash_sha512_init","crypto_hash_sha512_update","crypto_ipcrypt_decrypt","crypto_ipcrypt_encrypt","crypto_ipcrypt_keygen","crypto_ipcrypt_nd_decrypt","crypto_ipcrypt_nd_encrypt","crypto_ipcrypt_nd_keygen","crypto_ipcrypt_ndx_decrypt","crypto_ipcrypt_ndx_encrypt","crypto_ipcrypt_ndx_keygen","crypto_ipcrypt_pfx_decrypt","crypto_ipcrypt_pfx_encrypt","crypto_ipcrypt_pfx_keygen","crypto_kdf_derive_from_key","crypto_kdf_keygen","crypto_kem_dec","crypto_kem_enc","crypto_kem_keypair","crypto_kem_mlkem768_dec","crypto_kem_mlkem768_enc","crypto_kem_mlkem768_enc_deterministic","crypto_kem_mlkem768_keypair","crypto_kem_mlkem768_seed_keypair","crypto_kem_primitive","crypto_kem_seed_keypair","crypto_kem_xwing_dec","crypto_kem_xwing_enc","crypto_kem_xwing_enc_deterministic","crypto_kem_xwing_keypair","crypto_kem_xwing_seed_keypair","crypto_kx_client_session_keys","crypto_kx_keypair","crypto_kx_seed_keypair","crypto_kx_server_session_keys","crypto_onetimeauth","crypto_onetimeauth_final","crypto_onetimeauth_init","crypto_onetimeauth_keygen","crypto_onetimeauth_update","crypto_onetimeauth_verify","crypto_pwhash","crypto_pwhash_scryptsalsa208sha256","crypto_pwhash_scryptsalsa208sha256_ll","crypto_pwhash_scryptsalsa208sha256_str","crypto_pwhash_scryptsalsa208sha256_str_verify","crypto_pwhash_str","crypto_pwhash_str_needs_rehash","crypto_pwhash_str_verify","crypto_scalarmult","crypto_scalarmult_base","crypto_scalarmult_ed25519","crypto_scalarmult_ed25519_base","crypto_scalarmult_ed25519_base_noclamp","crypto_scalarmult_ed25519_noclamp","crypto_scalarmult_ristretto255","crypto_scalarmult_ristretto255_base","crypto_secretbox_detached","crypto_secretbox_easy","crypto_secretbox_keygen","crypto_secretbox_open_detached","crypto_secretbox_open_easy","crypto_secretstream_xchacha20poly1305_init_pull","crypto_secretstream_xchacha20poly1305_init_push","crypto_secretstream_xchacha20poly1305_keygen","crypto_secretstream_xchacha20poly1305_pull","crypto_secretstream_xchacha20poly1305_push","crypto_secretstream_xchacha20poly1305_rekey","crypto_shorthash","crypto_shorthash_keygen","crypto_shorthash_siphashx24","crypto_sign","crypto_sign_detached","crypto_sign_ed25519_pk_to_curve25519","crypto_sign_ed25519_sk_to_curve25519","crypto_sign_ed25519_sk_to_pk","crypto_sign_ed25519_sk_to_seed","crypto_sign_final_create","crypto_sign_final_verify","crypto_sign_init","crypto_sign_keypair","crypto_sign_open","crypto_sign_seed_keypair","crypto_sign_update","crypto_sign_verify_detached","crypto_stream_chacha20","crypto_stream_chacha20_ietf_xor","crypto_stream_chacha20_ietf_xor_ic","crypto_stream_chacha20_keygen","crypto_stream_chacha20_xor","crypto_stream_chacha20_xor_ic","crypto_stream_keygen","crypto_stream_xchacha20_keygen","crypto_stream_xchacha20_xor","crypto_stream_xchacha20_xor_ic","crypto_xof_shake128","crypto_xof_shake128_init","crypto_xof_shake128_init_with_domain","crypto_xof_shake128_squeeze","crypto_xof_shake128_update","crypto_xof_shake256","crypto_xof_shake256_init","crypto_xof_shake256_init_with_domain","crypto_xof_shake256_squeeze","crypto_xof_shake256_update","crypto_xof_turboshake128","crypto_xof_turboshake128_init","crypto_xof_turboshake128_init_with_domain","crypto_xof_turboshake128_squeeze","crypto_xof_turboshake128_update","crypto_xof_turboshake256","crypto_xof_turboshake256_init","crypto_xof_turboshake256_init_with_domain","crypto_xof_turboshake256_squeeze","crypto_xof_turboshake256_update","randombytes_buf","randombytes_buf_deterministic","randombytes_close","randombytes_random","randombytes_set_implementation","randombytes_stir","randombytes_uniform","sodium_bin2ip","sodium_ip2bin","sodium_version_string"],a=[C,R,P,X,D,G,F,V,q,H,z,W,j,J,Q,Z,$,ee,re,te,ae,_e,ne,se,ce,pe,oe,he,ye,ie,le,ue,de,ve,ge,be,fe,me,ke,xe,Ee,Te,Se,we,Ye,Be,Ke,Ae,Ie,Me,Ne,Le,Ue,Oe,Ce,Re,Pe,Xe,De,Ge,Fe,Ve,qe,He,ze,We,je,Je,Qe,Ze,$e,er,rr,tr,ar,_r,nr,sr,cr,pr,or,hr,yr,ir,lr,ur,dr,vr,gr,br,fr,mr,kr,xr,Er,Tr,Sr,wr,Yr,Br,Kr,Ar,Ir,Mr,Nr,Lr,Ur,Or,Cr,Rr,Pr,Xr,Dr,Gr,Fr,Vr,qr,Hr,zr,Wr,jr,Jr,Qr,Zr,$r,et,rt,tt,at,_t,nt,st,ct,pt,ot,ht,yt,it,lt,ut,dt,vt,gt,bt,ft,mt,kt,xt,Et,Tt,St,wt,Yt,Bt,Kt,At,It,Mt,Nt,Lt,Ut,Ot,Ct,Rt,Pt,Xt,Dt,Gt,Ft,Vt,qt,Ht,zt,Wt,jt,Jt,Qt,Zt,$t,ea,ra,ta,aa,_a,na,sa,ca,pa,oa,ha,ya,ia,la,ua,da,va,ga,ba,fa,ma,ka,xa,Ea,Ta,Sa,wa,Ya,Ba,Ka,Aa,Ia,Ma,Na,La,Ua,Oa,Ca,Ra,Pa,Xa,Da,Ga,Fa,Va,qa,Ha,za,Wa,ja,Ja,Qa,Za,$a,e_,r_,t_,a_,__,n_,s_,c_,p_,o_,h_,y_],_=0;_<a.length;_++)"function"==typeof r["_"+e[_]]&&(t[e[_]]=a[_]);var n=["SODIUM_LIBRARY_VERSION_MAJOR","SODIUM_LIBRARY_VERSION_MINOR","crypto_aead_aegis128l_ABYTES","crypto_aead_aegis128l_KEYBYTES","crypto_aead_aegis128l_MESSAGEBYTES_MAX","crypto_aead_aegis128l_NPUBBYTES","crypto_aead_aegis128l_NSECBYTES","crypto_aead_aegis256_ABYTES","crypto_aead_aegis256_KEYBYTES","crypto_aead_aegis256_MESSAGEBYTES_MAX","crypto_aead_aegis256_NPUBBYTES","crypto_aead_aegis256_NSECBYTES","crypto_aead_aes256gcm_ABYTES","crypto_aead_aes256gcm_KEYBYTES","crypto_aead_aes256gcm_MESSAGEBYTES_MAX","crypto_aead_aes256gcm_NPUBBYTES","crypto_aead_aes256gcm_NSECBYTES","crypto_aead_chacha20poly1305_ABYTES","crypto_aead_chacha20poly1305_IETF_ABYTES","crypto_aead_chacha20poly1305_IETF_KEYBYTES","crypto_aead_chacha20poly1305_IETF_MESSAGEBYTES_MAX","crypto_aead_chacha20poly1305_IETF_NPUBBYTES","crypto_aead_chacha20poly1305_IETF_NSECBYTES","crypto_aead_chacha20poly1305_KEYBYTES","crypto_aead_chacha20poly1305_MESSAGEBYTES_MAX","crypto_aead_chacha20poly1305_NPUBBYTES","crypto_aead_chacha20poly1305_NSECBYTES","crypto_aead_chacha20poly1305_ietf_ABYTES","crypto_aead_chacha20poly1305_ietf_KEYBYTES","crypto_aead_chacha20poly1305_ietf_MESSAGEBYTES_MAX","crypto_aead_chacha20poly1305_ietf_NPUBBYTES","crypto_aead_chacha20poly1305_ietf_NSECBYTES","crypto_aead_xchacha20poly1305_IETF_ABYTES","crypto_aead_xchacha20poly1305_IETF_KEYBYTES","crypto_aead_xchacha20poly1305_IETF_MESSAGEBYTES_MAX","crypto_aead_xchacha20poly1305_IETF_NPUBBYTES","crypto_aead_xchacha20poly1305_IETF_NSECBYTES","crypto_aead_xchacha20poly1305_ietf_ABYTES","crypto_aead_xchacha20poly1305_ietf_KEYBYTES","crypto_aead_xchacha20poly1305_ietf_MESSAGEBYTES_MAX","crypto_aead_xchacha20poly1305_ietf_NPUBBYTES","crypto_aead_xchacha20poly1305_ietf_NSECBYTES","crypto_auth_BYTES","crypto_auth_KEYBYTES","crypto_auth_hmacsha256_BYTES","crypto_auth_hmacsha256_KEYBYTES","crypto_auth_hmacsha512256_BYTES","crypto_auth_hmacsha512256_KEYBYTES","crypto_auth_hmacsha512_BYTES","crypto_auth_hmacsha512_KEYBYTES","crypto_box_BEFORENMBYTES","crypto_box_MACBYTES","crypto_box_MESSAGEBYTES_MAX","crypto_box_NONCEBYTES","crypto_box_PUBLICKEYBYTES","crypto_box_SEALBYTES","crypto_box_SECRETKEYBYTES","crypto_box_SEEDBYTES","crypto_box_curve25519xchacha20poly1305_BEFORENMBYTES","crypto_box_curve25519xchacha20poly1305_MACBYTES","crypto_box_curve25519xchacha20poly1305_MESSAGEBYTES_MAX","crypto_box_curve25519xchacha20poly1305_NONCEBYTES","crypto_box_curve25519xchacha20poly1305_PUBLICKEYBYTES","crypto_box_curve25519xchacha20poly1305_SEALBYTES","crypto_box_curve25519xchacha20poly1305_SECRETKEYBYTES","crypto_box_curve25519xchacha20poly1305_SEEDBYTES","crypto_box_curve25519xsalsa20poly1305_BEFORENMBYTES","crypto_box_curve25519xsalsa20poly1305_MACBYTES","crypto_box_curve25519xsalsa20poly1305_MESSAGEBYTES_MAX","crypto_box_curve25519xsalsa20poly1305_NONCEBYTES","crypto_box_curve25519xsalsa20poly1305_PUBLICKEYBYTES","crypto_box_curve25519xsalsa20poly1305_SECRETKEYBYTES","crypto_box_curve25519xsalsa20poly1305_SEEDBYTES","crypto_core_ed25519_BYTES","crypto_core_ed25519_HASHBYTES","crypto_core_ed25519_NONREDUCEDSCALARBYTES","crypto_core_ed25519_SCALARBYTES","crypto_core_ed25519_UNIFORMBYTES","crypto_core_hchacha20_CONSTBYTES","crypto_core_hchacha20_INPUTBYTES","crypto_core_hchacha20_KEYBYTES","crypto_core_hchacha20_OUTPUTBYTES","crypto_core_hsalsa20_CONSTBYTES","crypto_core_hsalsa20_INPUTBYTES","crypto_core_hsalsa20_KEYBYTES","crypto_core_hsalsa20_OUTPUTBYTES","crypto_core_ristretto255_BYTES","crypto_core_ristretto255_HASHBYTES","crypto_core_ristretto255_NONREDUCEDSCALARBYTES","crypto_core_ristretto255_SCALARBYTES","crypto_core_salsa2012_CONSTBYTES","crypto_core_salsa2012_INPUTBYTES","crypto_core_salsa2012_KEYBYTES","crypto_core_salsa2012_OUTPUTBYTES","crypto_core_salsa208_CONSTBYTES","crypto_core_salsa208_INPUTBYTES","crypto_core_salsa208_KEYBYTES","crypto_core_salsa208_OUTPUTBYTES","crypto_core_salsa20_CONSTBYTES","crypto_core_salsa20_INPUTBYTES","crypto_core_salsa20_KEYBYTES","crypto_core_salsa20_OUTPUTBYTES","crypto_generichash_BYTES","crypto_generichash_BYTES_MAX","crypto_generichash_BYTES_MIN","crypto_generichash_KEYBYTES","crypto_generichash_KEYBYTES_MAX","crypto_generichash_KEYBYTES_MIN","crypto_generichash_blake2b_BYTES","crypto_generichash_blake2b_BYTES_MAX","crypto_generichash_blake2b_BYTES_MIN","crypto_generichash_blake2b_KEYBYTES","crypto_generichash_blake2b_KEYBYTES_MAX","crypto_generichash_blake2b_KEYBYTES_MIN","crypto_generichash_blake2b_PERSONALBYTES","crypto_generichash_blake2b_SALTBYTES","crypto_hash_BYTES","crypto_hash_sha256_BYTES","crypto_hash_sha3256_BYTES","crypto_hash_sha3512_BYTES","crypto_hash_sha512_BYTES","crypto_ipcrypt_BYTES","crypto_ipcrypt_KEYBYTES","crypto_ipcrypt_NDX_INPUTBYTES","crypto_ipcrypt_NDX_KEYBYTES","crypto_ipcrypt_NDX_OUTPUTBYTES","crypto_ipcrypt_NDX_TWEAKBYTES","crypto_ipcrypt_ND_INPUTBYTES","crypto_ipcrypt_ND_KEYBYTES","crypto_ipcrypt_ND_OUTPUTBYTES","crypto_ipcrypt_ND_TWEAKBYTES","crypto_ipcrypt_PFX_BYTES","crypto_ipcrypt_PFX_KEYBYTES","crypto_kdf_BYTES_MAX","crypto_kdf_BYTES_MIN","crypto_kdf_CONTEXTBYTES","crypto_kdf_KEYBYTES","crypto_kdf_blake2b_BYTES_MAX","crypto_kdf_blake2b_BYTES_MIN","crypto_kdf_blake2b_CONTEXTBYTES","crypto_kdf_blake2b_KEYBYTES","crypto_kdf_hkdf_sha256_BYTES_MAX","crypto_kdf_hkdf_sha256_BYTES_MIN","crypto_kdf_hkdf_sha256_KEYBYTES","crypto_kdf_hkdf_sha512_BYTES_MAX","crypto_kdf_hkdf_sha512_BYTES_MIN","crypto_kdf_hkdf_sha512_KEYBYTES","crypto_kem_CIPHERTEXTBYTES","crypto_kem_PUBLICKEYBYTES","crypto_kem_SECRETKEYBYTES","crypto_kem_SEEDBYTES","crypto_kem_SHAREDSECRETBYTES","crypto_kem_mlkem768_CIPHERTEXTBYTES","crypto_kem_mlkem768_PUBLICKEYBYTES","crypto_kem_mlkem768_SECRETKEYBYTES","crypto_kem_mlkem768_SEEDBYTES","crypto_kem_mlkem768_SHAREDSECRETBYTES","crypto_kem_xwing_CIPHERTEXTBYTES","crypto_kem_xwing_PUBLICKEYBYTES","crypto_kem_xwing_SECRETKEYBYTES","crypto_kem_xwing_SEEDBYTES","crypto_kem_xwing_SHAREDSECRETBYTES","crypto_kx_PUBLICKEYBYTES","crypto_kx_SECRETKEYBYTES","crypto_kx_SEEDBYTES","crypto_kx_SESSIONKEYBYTES","crypto_onetimeauth_BYTES","crypto_onetimeauth_KEYBYTES","crypto_onetimeauth_poly1305_BYTES","crypto_onetimeauth_poly1305_KEYBYTES","crypto_pwhash_ALG_ARGON2I13","crypto_pwhash_ALG_ARGON2ID13","crypto_pwhash_ALG_DEFAULT","crypto_pwhash_BYTES_MAX","crypto_pwhash_BYTES_MIN","crypto_pwhash_MEMLIMIT_INTERACTIVE","crypto_pwhash_MEMLIMIT_MAX","crypto_pwhash_MEMLIMIT_MIN","crypto_pwhash_MEMLIMIT_MODERATE","crypto_pwhash_MEMLIMIT_SENSITIVE","crypto_pwhash_OPSLIMIT_INTERACTIVE","crypto_pwhash_OPSLIMIT_MAX","crypto_pwhash_OPSLIMIT_MIN","crypto_pwhash_OPSLIMIT_MODERATE","crypto_pwhash_OPSLIMIT_SENSITIVE","crypto_pwhash_PASSWD_MAX","crypto_pwhash_PASSWD_MIN","crypto_pwhash_SALTBYTES","crypto_pwhash_STRBYTES","crypto_pwhash_argon2i_BYTES_MAX","crypto_pwhash_argon2i_BYTES_MIN","crypto_pwhash_argon2i_MEMLIMIT_INTERACTIVE","crypto_pwhash_argon2i_MEMLIMIT_MAX","crypto_pwhash_argon2i_MEMLIMIT_MIN","crypto_pwhash_argon2i_MEMLIMIT_MODERATE","crypto_pwhash_argon2i_MEMLIMIT_SENSITIVE","crypto_pwhash_argon2i_OPSLIMIT_INTERACTIVE","crypto_pwhash_argon2i_OPSLIMIT_MAX","crypto_pwhash_argon2i_OPSLIMIT_MIN","crypto_pwhash_argon2i_OPSLIMIT_MODERATE","crypto_pwhash_argon2i_OPSLIMIT_SENSITIVE","crypto_pwhash_argon2i_PASSWD_MAX","crypto_pwhash_argon2i_PASSWD_MIN","crypto_pwhash_argon2i_SALTBYTES","crypto_pwhash_argon2i_STRBYTES","crypto_pwhash_argon2id_BYTES_MAX","crypto_pwhash_argon2id_BYTES_MIN","crypto_pwhash_argon2id_MEMLIMIT_INTERACTIVE","crypto_pwhash_argon2id_MEMLIMIT_MAX","crypto_pwhash_argon2id_MEMLIMIT_MIN","crypto_pwhash_argon2id_MEMLIMIT_MODERATE","crypto_pwhash_argon2id_MEMLIMIT_SENSITIVE","crypto_pwhash_argon2id_OPSLIMIT_INTERACTIVE","crypto_pwhash_argon2id_OPSLIMIT_MAX","crypto_pwhash_argon2id_OPSLIMIT_MIN","crypto_pwhash_argon2id_OPSLIMIT_MODERATE","crypto_pwhash_argon2id_OPSLIMIT_SENSITIVE","crypto_pwhash_argon2id_PASSWD_MAX","crypto_pwhash_argon2id_PASSWD_MIN","crypto_pwhash_argon2id_SALTBYTES","crypto_pwhash_argon2id_STRBYTES","crypto_pwhash_scryptsalsa208sha256_BYTES_MAX","crypto_pwhash_scryptsalsa208sha256_BYTES_MIN","crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE","crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MAX","crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_MIN","crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_SENSITIVE","crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_INTERACTIVE","crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MAX","crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_MIN","crypto_pwhash_scryptsalsa208sha256_OPSLIMIT_SENSITIVE","crypto_pwhash_scryptsalsa208sha256_PASSWD_MAX","crypto_pwhash_scryptsalsa208sha256_PASSWD_MIN","crypto_pwhash_scryptsalsa208sha256_SALTBYTES","crypto_pwhash_scryptsalsa208sha256_STRBYTES","crypto_scalarmult_BYTES","crypto_scalarmult_SCALARBYTES","crypto_scalarmult_curve25519_BYTES","crypto_scalarmult_curve25519_SCALARBYTES","crypto_scalarmult_ed25519_BYTES","crypto_scalarmult_ed25519_SCALARBYTES","crypto_scalarmult_ristretto255_BYTES","crypto_scalarmult_ristretto255_SCALARBYTES","crypto_secretbox_KEYBYTES","crypto_secretbox_MACBYTES","crypto_secretbox_MESSAGEBYTES_MAX","crypto_secretbox_NONCEBYTES","crypto_secretbox_xchacha20poly1305_KEYBYTES","crypto_secretbox_xchacha20poly1305_MACBYTES","crypto_secretbox_xchacha20poly1305_MESSAGEBYTES_MAX","crypto_secretbox_xchacha20poly1305_NONCEBYTES","crypto_secretbox_xsalsa20poly1305_KEYBYTES","crypto_secretbox_xsalsa20poly1305_MACBYTES","crypto_secretbox_xsalsa20poly1305_MESSAGEBYTES_MAX","crypto_secretbox_xsalsa20poly1305_NONCEBYTES","crypto_secretstream_xchacha20poly1305_ABYTES","crypto_secretstream_xchacha20poly1305_HEADERBYTES","crypto_secretstream_xchacha20poly1305_KEYBYTES","crypto_secretstream_xchacha20poly1305_MESSAGEBYTES_MAX","crypto_secretstream_xchacha20poly1305_TAG_FINAL","crypto_secretstream_xchacha20poly1305_TAG_MESSAGE","crypto_secretstream_xchacha20poly1305_TAG_PUSH","crypto_secretstream_xchacha20poly1305_TAG_REKEY","crypto_shorthash_BYTES","crypto_shorthash_KEYBYTES","crypto_shorthash_siphash24_BYTES","crypto_shorthash_siphash24_KEYBYTES","crypto_shorthash_siphashx24_BYTES","crypto_shorthash_siphashx24_KEYBYTES","crypto_sign_BYTES","crypto_sign_MESSAGEBYTES_MAX","crypto_sign_PUBLICKEYBYTES","crypto_sign_SECRETKEYBYTES","crypto_sign_SEEDBYTES","crypto_sign_ed25519_BYTES","crypto_sign_ed25519_MESSAGEBYTES_MAX","crypto_sign_ed25519_PUBLICKEYBYTES","crypto_sign_ed25519_SECRETKEYBYTES","crypto_sign_ed25519_SEEDBYTES","crypto_stream_KEYBYTES","crypto_stream_MESSAGEBYTES_MAX","crypto_stream_NONCEBYTES","crypto_stream_chacha20_IETF_KEYBYTES","crypto_stream_chacha20_IETF_MESSAGEBYTES_MAX","crypto_stream_chacha20_IETF_NONCEBYTES","crypto_stream_chacha20_KEYBYTES","crypto_stream_chacha20_MESSAGEBYTES_MAX","crypto_stream_chacha20_NONCEBYTES","crypto_stream_chacha20_ietf_KEYBYTES","crypto_stream_chacha20_ietf_MESSAGEBYTES_MAX","crypto_stream_chacha20_ietf_NONCEBYTES","crypto_stream_salsa2012_KEYBYTES","crypto_stream_salsa2012_MESSAGEBYTES_MAX","crypto_stream_salsa2012_NONCEBYTES","crypto_stream_salsa208_KEYBYTES","crypto_stream_salsa208_MESSAGEBYTES_MAX","crypto_stream_salsa208_NONCEBYTES","crypto_stream_salsa20_KEYBYTES","crypto_stream_salsa20_MESSAGEBYTES_MAX","crypto_stream_salsa20_NONCEBYTES","crypto_stream_xchacha20_KEYBYTES","crypto_stream_xchacha20_MESSAGEBYTES_MAX","crypto_stream_xchacha20_NONCEBYTES","crypto_stream_xsalsa20_KEYBYTES","crypto_stream_xsalsa20_MESSAGEBYTES_MAX","crypto_stream_xsalsa20_NONCEBYTES","crypto_verify_16_BYTES","crypto_verify_32_BYTES","crypto_verify_64_BYTES","crypto_xof_shake128_BLOCKBYTES","crypto_xof_shake128_STATEBYTES","crypto_xof_shake256_BLOCKBYTES","crypto_xof_shake256_STATEBYTES","crypto_xof_turboshake128_BLOCKBYTES","crypto_xof_turboshake128_STATEBYTES","crypto_xof_turboshake256_BLOCKBYTES","crypto_xof_turboshake256_STATEBYTES"];for(_=0;_<n.length;_++)"function"==typeof(c=r["_"+n[_].toLowerCase()])&&(t[n[_]]=c());var s=["SODIUM_VERSION_STRING","crypto_kem_PRIMITIVE","crypto_pwhash_STRPREFIX","crypto_pwhash_argon2i_STRPREFIX","crypto_pwhash_argon2id_STRPREFIX","crypto_pwhash_scryptsalsa208sha256_STRPREFIX"];for(_=0;_<s.length;_++){var c;"function"==typeof(c=r["_"+s[_].toLowerCase()])&&(t[s[_]]=r.UTF8ToString(c()))}}();var a=new Uint8Array([98,97,108,108,115]),_=t.randombytes_buf(t.crypto_secretbox_NONCEBYTES),n=t.randombytes_buf(t.crypto_secretbox_KEYBYTES),s=t.crypto_secretbox_easy(a,_,n),c=t.crypto_secretbox_open_easy(s,_,n);if(!t.memcmp(a,c))throw new Error("Initialization self-test failed")});function c(){return Object.keys(t).sort()}function p(e){if(!(e instanceof Uint8Array))throw new TypeError("Only Uint8Array instances can be incremented");for(var r=256,t=0,a=e.length;t<a;t++)r>>=8,r+=e[t],e[t]=255&r}function o(e,r){if(!(e instanceof Uint8Array&&r instanceof Uint8Array))throw new TypeError("Only Uint8Array instances can be added");var t=e.length,a=0,_=0;if(r.length!==e.length)throw new TypeError("Arguments must have the same length");for(_=0;_<t;_++)a>>=8,a+=e[_]+r[_],e[_]=255&a}function h(e){if(!(e instanceof Uint8Array))throw new TypeError("Only Uint8Array instances can be checked");for(var r=0,t=0,a=e.length;t<a;t++)r|=e[t];return 0===r}function y(e){if(!(e instanceof Uint8Array))throw new TypeError("Only Uint8Array instances can be wiped");for(var r=0,t=e.length;r<t;r++)e[r]=0}function i(e,r){if(!(e instanceof Uint8Array&&r instanceof Uint8Array))throw new TypeError("Only Uint8Array instances can be compared");if(e.length!==r.length)throw new TypeError("Only instances of identical length can be compared");for(var t=0,a=0,_=e.length;a<_;a++)t|=e[a]^r[a];return 0===t}function l(e,r){if(!(e instanceof Uint8Array&&r instanceof Uint8Array))throw new TypeError("Only Uint8Array instances can be compared");if(e.length!==r.length)throw new TypeError("Only instances of identical length can be compared");for(var t=0,a=1,_=e.length;_-- >0;)t|=r[_]-e[_]>>8&a,a&=(r[_]^e[_])-1>>8;return t+t+a-1}function u(e,t){if(!(e instanceof Uint8Array))throw new TypeError("buffer must be a Uint8Array");if((t|=0)<=0)throw new Error("block size must be > 0");var a,_=[],n=A(4),s=1,c=0,p=0|e.length,o=new B(p+t);_.push(n),_.push(o.address);for(var h=o.address,y=o.address+p+t;h<y;h++)r.HEAPU8[h]=e[c],c+=s=1&~((65535&((p-=s)>>>48|p>>>32|p>>>16|p))-1>>16);return 0!==r._sodium_pad(n,o.address,e.length,t,o.length)&&N(_,"internal error"),o.length=r.getValue(n,"i32"),a=o.to_Uint8Array(),M(_),a}function d(e,t){if(!(e instanceof Uint8Array))throw new TypeError("buffer must be a Uint8Array");if((t|=0)<=0)throw new Error("block size must be > 0");var a=[],_=K(e),n=A(4);return a.push(_),a.push(n),0!==r._sodium_unpad(n,_,e.length,t)&&N(a,"unsupported/invalid padding"),e=(e=new Uint8Array(e)).subarray(0,r.getValue(n,"i32")),M(a),e}function v(e){if("function"==typeof TextEncoder)return(new TextEncoder).encode(e);e=unescape(encodeURIComponent(e));for(var r=new Uint8Array(e.length),t=0,a=e.length;t<a;t++)r[t]=e.charCodeAt(t);return r}function g(e){if("function"==typeof TextDecoder)return new TextDecoder("utf-8",{fatal:!0}).decode(e);var r=8192,t=Math.ceil(e.length/r);if(t<=1)try{return decodeURIComponent(escape(String.fromCharCode.apply(null,e)))}catch(e){throw new TypeError("The encoded data was not valid.")}for(var a="",_=0,n=0;n<t;n++){var s=Array.prototype.slice.call(e,n*r+_,(n+1)*r+_);if(0!==s.length){var c,p=s.length,o=0;do{var h=s[--p];h>=240?(o=4,c=!0):h>=224?(o=3,c=!0):h>=192?(o=2,c=!0):h<128&&(o=1,c=!0)}while(!c);for(var y=o-(s.length-p),i=0;i<y;i++)_--,s.pop();a+=g(s)}}return a}function b(e){var t,a=[],_=new B((e=O(a,e,"input")).length/2),n=K(e),s=A(4);return a.push(n),a.push(_.address),a.push(s),0!==r._sodium_hex2bin(_.address,_.length,n,e.length,0,0,s)&&N(a,"invalid input"),r.getValue(s,"i32")-n!==e.length&&N(a,"incomplete input"),t=_.to_Uint8Array(),M(a),t}function f(e){e=O(null,e,"input");for(var r,t,a,_="",n=0;n<e.length;n++)a=87+(t=15&e[n])+(t-10>>8&-39)<<8|87+(r=e[n]>>>4)+(r-10>>8&-39),_+=String.fromCharCode(255&a)+String.fromCharCode(a>>>8);return _}var m={ORIGINAL:1,ORIGINAL_NO_PADDING:3,URLSAFE:5,URLSAFE_NO_PADDING:7};function k(e){if(void 0===e)return m.URLSAFE_NO_PADDING;if(e!==m.ORIGINAL&&e!==m.ORIGINAL_NO_PADDING&&e!==m.URLSAFE&&e!==m.URLSAFE_NO_PADDING)throw new Error("unsupported base64 variant");return e}function x(e,t){t=k(t);var a,_=[],n=new B(3*(e=O(_,e,"input")).length/4),s=K(e),c=A(4),p=A(4);return _.push(s),_.push(n.address),_.push(c),_.push(p),0!==r._sodium_base642bin(n.address,n.length,s,e.length,0,c,p,t)&&N(_,"invalid input"),r.getValue(p,"i32")-s!==e.length&&N(_,"incomplete input"),n.length=r.getValue(c,"i32"),a=n.to_Uint8Array(),M(_),a}function E(e,t){t=k(t);var a=[];e=O(a,e,"input");var _,n=0|Math.floor(e.length/3),s=e.length-3*n,c=4*n+(0!==s?2&t?2+(s>>>1):4:0),p=new B(c+1),o=K(e);return a.push(o),a.push(p.address),0===r._sodium_bin2base64(p.address,p.length,o,e.length,t)&&N(a,"conversion failed"),p.length=c,_=g(p.to_Uint8Array()),M(a),_}function T(){return["uint8array","text","hex","base64"]}function S(e,r){var t=r||"uint8array";if(!w(t))throw new Error(t+" output format is not available");if(e instanceof B){if("uint8array"===t)return e.to_Uint8Array();if("text"===t)return g(e.to_Uint8Array());if("hex"===t)return f(e.to_Uint8Array());if("base64"===t)return E(e.to_Uint8Array(),m.URLSAFE_NO_PADDING);throw new Error('What is output format "'+t+'"?')}if("object"==typeof e){for(var a=Object.keys(e),_={},n=0;n<a.length;n++)_[a[n]]=S(e[a[n]],t);return _}if("string"==typeof e)return e;throw new TypeError("Cannot format output")}function w(e){for(var r=["uint8array","text","hex","base64"],t=0;t<r.length;t++)if(r[t]===e)return!0;return!1}function Y(e){if(e){if("string"!=typeof e)throw new TypeError("When defined, the output format must be a string");if(!w(e))throw new Error(e+" is not a supported output format")}}function B(e){this.length=e,this.address=A(e)}function K(e){var t=A(e.length);return r.HEAPU8.set(e,t),t}function A(e){var t=r._malloc(e);if(0===t)throw{message:"_malloc() failed",length:e};return t}function I(e){r._free(e)}function M(e){if(e)for(var r=0;r<e.length;r++)I(e[r])}function N(e,r){throw M(e),new Error(r)}function L(e,r){throw M(e),new TypeError(r)}function U(e,r,t){null==r&&L(e,t+" cannot be null or undefined")}function O(e,r,t){return U(e,r,t),r instanceof Uint8Array?r:"string"==typeof r?v(r):void L(e,"unsupported input type for "+t)}function C(e,t,a,_,n,s){var c=[];Y(s);var p=null;null!=e&&(p=K(e=O(c,e,"secret_nonce")),e.length,c.push(p)),t=O(c,t,"ciphertext");var o,h=r._crypto_aead_aegis128l_abytes(),y=t.length;y<h&&L(c,"ciphertext is too short"),o=K(t),c.push(o);var i=null,l=0;null!=a&&(i=K(a=O(c,a,"additional_data")),l=a.length,c.push(i)),_=O(c,_,"public_nonce");var u,d=0|r._crypto_aead_aegis128l_npubbytes();_.length!==d&&L(c,"invalid public_nonce length"),u=K(_),c.push(u),n=O(c,n,"key");var v,g=0|r._crypto_aead_aegis128l_keybytes();n.length!==g&&L(c,"invalid key length"),v=K(n),c.push(v);var b=new B(y-r._crypto_aead_aegis128l_abytes()|0),f=b.address;if(c.push(f),0===r._crypto_aead_aegis128l_decrypt(f,null,p,o,y,0,i,l,0,u,v)){var m=S(b,s);return M(c),m}N(c,"ciphertext cannot be decrypted using that key")}function R(e,t,a,_,n,s,c){var p=[];Y(c);var o=null;null!=e&&(o=K(e=O(p,e,"secret_nonce")),e.length,p.push(o));var h=K(t=O(p,t,"ciphertext")),y=t.length;p.push(h),a=O(p,a,"mac");var i,l=0|r._crypto_aead_aegis128l_abytes();a.length!==l&&L(p,"invalid mac length"),i=K(a),p.push(i);var u=null,d=0;null!=_&&(u=K(_=O(p,_,"additional_data")),d=_.length,p.push(u)),n=O(p,n,"public_nonce");var v,g=0|r._crypto_aead_aegis128l_npubbytes();n.length!==g&&L(p,"invalid public_nonce length"),v=K(n),p.push(v),s=O(p,s,"key");var b,f=0|r._crypto_aead_aegis128l_keybytes();s.length!==f&&L(p,"invalid key length"),b=K(s),p.push(b);var m=new B(0|y),k=m.address;if(p.push(k),0===r._crypto_aead_aegis128l_decrypt_detached(k,o,h,y,0,i,u,d,0,v,b)){var x=S(m,c);return M(p),x}N(p,"ciphertext cannot be decrypted using that key")}function P(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_aegis128l_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_aegis128l_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(o+r._crypto_aead_aegis128l_abytes()|0),b=g.address;if(c.push(b),0===r._crypto_aead_aegis128l_encrypt(b,null,p,o,0,h,y,0,i,l,d)){var f=S(g,s);return M(c),f}N(c,"invalid usage")}function X(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_aegis128l_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_aegis128l_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(0|o),b=g.address;c.push(b);var f=new B(0|r._crypto_aead_aegis128l_abytes()),m=f.address;if(c.push(m),0===r._crypto_aead_aegis128l_encrypt_detached(b,m,null,p,o,0,h,y,0,i,l,d)){var k=S({ciphertext:g,mac:f},s);return M(c),k}N(c,"invalid usage")}function D(e){var t=[];Y(e);var a=new B(0|r._crypto_aead_aegis128l_keybytes()),_=a.address;t.push(_),r._crypto_aead_aegis128l_keygen(_);var n=S(a,e);return M(t),n}function G(e,t,a,_,n,s){var c=[];Y(s);var p=null;null!=e&&(p=K(e=O(c,e,"secret_nonce")),e.length,c.push(p)),t=O(c,t,"ciphertext");var o,h=r._crypto_aead_aegis256_abytes(),y=t.length;y<h&&L(c,"ciphertext is too short"),o=K(t),c.push(o);var i=null,l=0;null!=a&&(i=K(a=O(c,a,"additional_data")),l=a.length,c.push(i)),_=O(c,_,"public_nonce");var u,d=0|r._crypto_aead_aegis256_npubbytes();_.length!==d&&L(c,"invalid public_nonce length"),u=K(_),c.push(u),n=O(c,n,"key");var v,g=0|r._crypto_aead_aegis256_keybytes();n.length!==g&&L(c,"invalid key length"),v=K(n),c.push(v);var b=new B(y-r._crypto_aead_aegis256_abytes()|0),f=b.address;if(c.push(f),0===r._crypto_aead_aegis256_decrypt(f,null,p,o,y,0,i,l,0,u,v)){var m=S(b,s);return M(c),m}N(c,"ciphertext cannot be decrypted using that key")}function F(e,t,a,_,n,s,c){var p=[];Y(c);var o=null;null!=e&&(o=K(e=O(p,e,"secret_nonce")),e.length,p.push(o));var h=K(t=O(p,t,"ciphertext")),y=t.length;p.push(h),a=O(p,a,"mac");var i,l=0|r._crypto_aead_aegis256_abytes();a.length!==l&&L(p,"invalid mac length"),i=K(a),p.push(i);var u=null,d=0;null!=_&&(u=K(_=O(p,_,"additional_data")),d=_.length,p.push(u)),n=O(p,n,"public_nonce");var v,g=0|r._crypto_aead_aegis256_npubbytes();n.length!==g&&L(p,"invalid public_nonce length"),v=K(n),p.push(v),s=O(p,s,"key");var b,f=0|r._crypto_aead_aegis256_keybytes();s.length!==f&&L(p,"invalid key length"),b=K(s),p.push(b);var m=new B(0|y),k=m.address;if(p.push(k),0===r._crypto_aead_aegis256_decrypt_detached(k,o,h,y,0,i,u,d,0,v,b)){var x=S(m,c);return M(p),x}N(p,"ciphertext cannot be decrypted using that key")}function V(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_aegis256_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_aegis256_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(o+r._crypto_aead_aegis256_abytes()|0),b=g.address;if(c.push(b),0===r._crypto_aead_aegis256_encrypt(b,null,p,o,0,h,y,0,i,l,d)){var f=S(g,s);return M(c),f}N(c,"invalid usage")}function q(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_aegis256_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_aegis256_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(0|o),b=g.address;c.push(b);var f=new B(0|r._crypto_aead_aegis256_abytes()),m=f.address;if(c.push(m),0===r._crypto_aead_aegis256_encrypt_detached(b,m,null,p,o,0,h,y,0,i,l,d)){var k=S({ciphertext:g,mac:f},s);return M(c),k}N(c,"invalid usage")}function H(e){var t=[];Y(e);var a=new B(0|r._crypto_aead_aegis256_keybytes()),_=a.address;t.push(_),r._crypto_aead_aegis256_keygen(_);var n=S(a,e);return M(t),n}function z(e,t,a,_,n,s){var c=[];Y(s);var p=null;null!=e&&(p=K(e=O(c,e,"secret_nonce")),e.length,c.push(p)),t=O(c,t,"ciphertext");var o,h=r._crypto_aead_chacha20poly1305_abytes(),y=t.length;y<h&&L(c,"ciphertext is too short"),o=K(t),c.push(o);var i=null,l=0;null!=a&&(i=K(a=O(c,a,"additional_data")),l=a.length,c.push(i)),_=O(c,_,"public_nonce");var u,d=0|r._crypto_aead_chacha20poly1305_npubbytes();_.length!==d&&L(c,"invalid public_nonce length"),u=K(_),c.push(u),n=O(c,n,"key");var v,g=0|r._crypto_aead_chacha20poly1305_keybytes();n.length!==g&&L(c,"invalid key length"),v=K(n),c.push(v);var b=new B(y-r._crypto_aead_chacha20poly1305_abytes()|0),f=b.address;if(c.push(f),0===r._crypto_aead_chacha20poly1305_decrypt(f,null,p,o,y,0,i,l,0,u,v)){var m=S(b,s);return M(c),m}N(c,"ciphertext cannot be decrypted using that key")}function W(e,t,a,_,n,s,c){var p=[];Y(c);var o=null;null!=e&&(o=K(e=O(p,e,"secret_nonce")),e.length,p.push(o));var h=K(t=O(p,t,"ciphertext")),y=t.length;p.push(h),a=O(p,a,"mac");var i,l=0|r._crypto_box_macbytes();a.length!==l&&L(p,"invalid mac length"),i=K(a),p.push(i);var u=null,d=0;null!=_&&(u=K(_=O(p,_,"additional_data")),d=_.length,p.push(u)),n=O(p,n,"public_nonce");var v,g=0|r._crypto_aead_chacha20poly1305_npubbytes();n.length!==g&&L(p,"invalid public_nonce length"),v=K(n),p.push(v),s=O(p,s,"key");var b,f=0|r._crypto_aead_chacha20poly1305_keybytes();s.length!==f&&L(p,"invalid key length"),b=K(s),p.push(b);var m=new B(0|y),k=m.address;if(p.push(k),0===r._crypto_aead_chacha20poly1305_decrypt_detached(k,o,h,y,0,i,u,d,0,v,b)){var x=S(m,c);return M(p),x}N(p,"ciphertext cannot be decrypted using that key")}function j(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_chacha20poly1305_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_chacha20poly1305_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(o+r._crypto_aead_chacha20poly1305_abytes()|0),b=g.address;if(c.push(b),0===r._crypto_aead_chacha20poly1305_encrypt(b,null,p,o,0,h,y,0,i,l,d)){var f=S(g,s);return M(c),f}N(c,"invalid usage")}function J(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_chacha20poly1305_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_chacha20poly1305_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(0|o),b=g.address;c.push(b);var f=new B(0|r._crypto_aead_chacha20poly1305_abytes()),m=f.address;if(c.push(m),0===r._crypto_aead_chacha20poly1305_encrypt_detached(b,m,null,p,o,0,h,y,0,i,l,d)){var k=S({ciphertext:g,mac:f},s);return M(c),k}N(c,"invalid usage")}function Q(e,t,a,_,n,s){var c=[];Y(s);var p=null;null!=e&&(p=K(e=O(c,e,"secret_nonce")),e.length,c.push(p)),t=O(c,t,"ciphertext");var o,h=r._crypto_aead_chacha20poly1305_ietf_abytes(),y=t.length;y<h&&L(c,"ciphertext is too short"),o=K(t),c.push(o);var i=null,l=0;null!=a&&(i=K(a=O(c,a,"additional_data")),l=a.length,c.push(i)),_=O(c,_,"public_nonce");var u,d=0|r._crypto_aead_chacha20poly1305_ietf_npubbytes();_.length!==d&&L(c,"invalid public_nonce length"),u=K(_),c.push(u),n=O(c,n,"key");var v,g=0|r._crypto_aead_chacha20poly1305_ietf_keybytes();n.length!==g&&L(c,"invalid key length"),v=K(n),c.push(v);var b=new B(y-r._crypto_aead_chacha20poly1305_ietf_abytes()|0),f=b.address;if(c.push(f),0===r._crypto_aead_chacha20poly1305_ietf_decrypt(f,null,p,o,y,0,i,l,0,u,v)){var m=S(b,s);return M(c),m}N(c,"ciphertext cannot be decrypted using that key")}function Z(e,t,a,_,n,s,c){var p=[];Y(c);var o=null;null!=e&&(o=K(e=O(p,e,"secret_nonce")),e.length,p.push(o));var h=K(t=O(p,t,"ciphertext")),y=t.length;p.push(h),a=O(p,a,"mac");var i,l=0|r._crypto_box_macbytes();a.length!==l&&L(p,"invalid mac length"),i=K(a),p.push(i);var u=null,d=0;null!=_&&(u=K(_=O(p,_,"additional_data")),d=_.length,p.push(u)),n=O(p,n,"public_nonce");var v,g=0|r._crypto_aead_chacha20poly1305_ietf_npubbytes();n.length!==g&&L(p,"invalid public_nonce length"),v=K(n),p.push(v),s=O(p,s,"key");var b,f=0|r._crypto_aead_chacha20poly1305_ietf_keybytes();s.length!==f&&L(p,"invalid key length"),b=K(s),p.push(b);var m=new B(0|y),k=m.address;if(p.push(k),0===r._crypto_aead_chacha20poly1305_ietf_decrypt_detached(k,o,h,y,0,i,u,d,0,v,b)){var x=S(m,c);return M(p),x}N(p,"ciphertext cannot be decrypted using that key")}function $(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_chacha20poly1305_ietf_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_chacha20poly1305_ietf_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(o+r._crypto_aead_chacha20poly1305_ietf_abytes()|0),b=g.address;if(c.push(b),0===r._crypto_aead_chacha20poly1305_ietf_encrypt(b,null,p,o,0,h,y,0,i,l,d)){var f=S(g,s);return M(c),f}N(c,"invalid usage")}function ee(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_chacha20poly1305_ietf_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_chacha20poly1305_ietf_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(0|o),b=g.address;c.push(b);var f=new B(0|r._crypto_aead_chacha20poly1305_ietf_abytes()),m=f.address;if(c.push(m),0===r._crypto_aead_chacha20poly1305_ietf_encrypt_detached(b,m,null,p,o,0,h,y,0,i,l,d)){var k=S({ciphertext:g,mac:f},s);return M(c),k}N(c,"invalid usage")}function re(e){var t=[];Y(e);var a=new B(0|r._crypto_aead_chacha20poly1305_ietf_keybytes()),_=a.address;t.push(_),r._crypto_aead_chacha20poly1305_ietf_keygen(_);var n=S(a,e);return M(t),n}function te(e){var t=[];Y(e);var a=new B(0|r._crypto_aead_chacha20poly1305_keybytes()),_=a.address;t.push(_),r._crypto_aead_chacha20poly1305_keygen(_);var n=S(a,e);return M(t),n}function ae(e,t,a,_,n,s){var c=[];Y(s);var p=null;null!=e&&(p=K(e=O(c,e,"secret_nonce")),e.length,c.push(p)),t=O(c,t,"ciphertext");var o,h=r._crypto_aead_xchacha20poly1305_ietf_abytes(),y=t.length;y<h&&L(c,"ciphertext is too short"),o=K(t),c.push(o);var i=null,l=0;null!=a&&(i=K(a=O(c,a,"additional_data")),l=a.length,c.push(i)),_=O(c,_,"public_nonce");var u,d=0|r._crypto_aead_xchacha20poly1305_ietf_npubbytes();_.length!==d&&L(c,"invalid public_nonce length"),u=K(_),c.push(u),n=O(c,n,"key");var v,g=0|r._crypto_aead_xchacha20poly1305_ietf_keybytes();n.length!==g&&L(c,"invalid key length"),v=K(n),c.push(v);var b=new B(y-r._crypto_aead_xchacha20poly1305_ietf_abytes()|0),f=b.address;if(c.push(f),0===r._crypto_aead_xchacha20poly1305_ietf_decrypt(f,null,p,o,y,0,i,l,0,u,v)){var m=S(b,s);return M(c),m}N(c,"ciphertext cannot be decrypted using that key")}function _e(e,t,a,_,n,s,c){var p=[];Y(c);var o=null;null!=e&&(o=K(e=O(p,e,"secret_nonce")),e.length,p.push(o));var h=K(t=O(p,t,"ciphertext")),y=t.length;p.push(h),a=O(p,a,"mac");var i,l=0|r._crypto_box_macbytes();a.length!==l&&L(p,"invalid mac length"),i=K(a),p.push(i);var u=null,d=0;null!=_&&(u=K(_=O(p,_,"additional_data")),d=_.length,p.push(u)),n=O(p,n,"public_nonce");var v,g=0|r._crypto_aead_xchacha20poly1305_ietf_npubbytes();n.length!==g&&L(p,"invalid public_nonce length"),v=K(n),p.push(v),s=O(p,s,"key");var b,f=0|r._crypto_aead_xchacha20poly1305_ietf_keybytes();s.length!==f&&L(p,"invalid key length"),b=K(s),p.push(b);var m=new B(0|y),k=m.address;if(p.push(k),0===r._crypto_aead_xchacha20poly1305_ietf_decrypt_detached(k,o,h,y,0,i,u,d,0,v,b)){var x=S(m,c);return M(p),x}N(p,"ciphertext cannot be decrypted using that key")}function ne(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_xchacha20poly1305_ietf_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_xchacha20poly1305_ietf_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(o+r._crypto_aead_xchacha20poly1305_ietf_abytes()|0),b=g.address;if(c.push(b),0===r._crypto_aead_xchacha20poly1305_ietf_encrypt(b,null,p,o,0,h,y,0,i,l,d)){var f=S(g,s);return M(c),f}N(c,"invalid usage")}function se(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"message")),o=e.length;c.push(p);var h=null,y=0;null!=t&&(h=K(t=O(c,t,"additional_data")),y=t.length,c.push(h));var i=null;null!=a&&(i=K(a=O(c,a,"secret_nonce")),a.length,c.push(i)),_=O(c,_,"public_nonce");var l,u=0|r._crypto_aead_xchacha20poly1305_ietf_npubbytes();_.length!==u&&L(c,"invalid public_nonce length"),l=K(_),c.push(l),n=O(c,n,"key");var d,v=0|r._crypto_aead_xchacha20poly1305_ietf_keybytes();n.length!==v&&L(c,"invalid key length"),d=K(n),c.push(d);var g=new B(0|o),b=g.address;c.push(b);var f=new B(0|r._crypto_aead_xchacha20poly1305_ietf_abytes()),m=f.address;if(c.push(m),0===r._crypto_aead_xchacha20poly1305_ietf_encrypt_detached(b,m,null,p,o,0,h,y,0,i,l,d)){var k=S({ciphertext:g,mac:f},s);return M(c),k}N(c,"invalid usage")}function ce(e){var t=[];Y(e);var a=new B(0|r._crypto_aead_xchacha20poly1305_ietf_keybytes()),_=a.address;t.push(_),r._crypto_aead_xchacha20poly1305_ietf_keygen(_);var n=S(a,e);return M(t),n}function pe(e,t,a){var _=[];Y(a);var n=K(e=O(_,e,"message")),s=e.length;_.push(n),t=O(_,t,"key");var c,p=0|r._crypto_auth_keybytes();t.length!==p&&L(_,"invalid key length"),c=K(t),_.push(c);var o=new B(0|r._crypto_auth_bytes()),h=o.address;if(_.push(h),!(0|r._crypto_auth(h,n,s,0,c))){var y=S(o,a);return M(_),y}N(_,"invalid usage")}function oe(e,t,a){var _=[];Y(a);var n=K(e=O(_,e,"message")),s=e.length;_.push(n),t=O(_,t,"key");var c,p=0|r._crypto_auth_hmacsha256_keybytes();t.length!==p&&L(_,"invalid key length"),c=K(t),_.push(c);var o=new B(0|r._crypto_auth_hmacsha256_bytes()),h=o.address;if(_.push(h),!(0|r._crypto_auth_hmacsha256(h,n,s,0,c))){var y=S(o,a);return M(_),y}N(_,"invalid usage")}function he(e,t){var a=[];Y(t),U(a,e,"state_address");var _=new B(0|r._crypto_auth_hmacsha256_bytes()),n=_.address;if(a.push(n),!(0|r._crypto_auth_hmacsha256_final(e,n))){var s=(r._free(e),S(_,t));return M(a),s}N(a,"invalid usage")}function ye(e,t){var a=[];Y(t);var _=null,n=0;null!=e&&(_=K(e=O(a,e,"key")),n=e.length,a.push(_));var s=new B(208).address;if(!(0|r._crypto_auth_hmacsha256_init(s,_,n))){var c=s;return M(a),c}N(a,"invalid usage")}function ie(e){var t=[];Y(e);var a=new B(0|r._crypto_auth_hmacsha256_keybytes()),_=a.address;t.push(_),r._crypto_auth_hmacsha256_keygen(_);var n=S(a,e);return M(t),n}function le(e,t,a){var _=[];Y(a),U(_,e,"state_address");var n=K(t=O(_,t,"message_chunk")),s=t.length;_.push(n),0|r._crypto_auth_hmacsha256_update(e,n,s)&&N(_,"invalid usage"),M(_)}function ue(e,t,a){var _=[];e=O(_,e,"tag");var n,s=0|r._crypto_auth_hmacsha256_bytes();e.length!==s&&L(_,"invalid tag length"),n=K(e),_.push(n);var c=K(t=O(_,t,"message")),p=t.length;_.push(c),a=O(_,a,"key");var o,h=0|r._crypto_auth_hmacsha256_keybytes();a.length!==h&&L(_,"invalid key length"),o=K(a),_.push(o);var y=!(0|r._crypto_auth_hmacsha256_verify(n,c,p,0,o));return M(_),y}function de(e,t,a){var _=[];Y(a);var n=K(e=O(_,e,"message")),s=e.length;_.push(n),t=O(_,t,"key");var c,p=0|r._crypto_auth_hmacsha512_keybytes();t.length!==p&&L(_,"invalid key length"),c=K(t),_.push(c);var o=new B(0|r._crypto_auth_hmacsha512_bytes()),h=o.address;if(_.push(h),!(0|r._crypto_auth_hmacsha512(h,n,s,0,c))){var y=S(o,a);return M(_),y}N(_,"invalid usage")}function ve(e,t,a){var _=[];Y(a);var n=K(e=O(_,e,"message")),s=e.length;_.push(n),t=O(_,t,"key");var c,p=0|r._crypto_auth_hmacsha512256_keybytes();t.length!==p&&L(_,"invalid key length"),c=K(t),_.push(c);var o=new B(0|r._crypto_auth_hmacsha512256_bytes()),h=o.address;if(_.push(h),!(0|r._crypto_auth_hmacsha512256(h,n,s,0,c))){var y=S(o,a);return M(_),y}N(_,"invalid usage")}function ge(e,t){var a=[];Y(t),U(a,e,"state_address");var _=new B(0|r._crypto_auth_hmacsha512256_bytes()),n=_.address;if(a.push(n),!(0|r._crypto_auth_hmacsha512256_final(e,n))){var s=(r._free(e),S(_,t));return M(a),s}N(a,"invalid usage")}function be(e,t){var a=[];Y(t);var _=null,n=0;null!=e&&(_=K(e=O(a,e,"key")),n=e.length,a.push(_));var s=new B(416).address;if(!(0|r._crypto_auth_hmacsha512256_init(s,_,n))){var c=s;return M(a),c}N(a,"invalid usage")}function fe(e){var t=[];Y(e);var a=new B(0|r._crypto_auth_hmacsha512256_keybytes()),_=a.address;t.push(_),r._crypto_auth_hmacsha512256_keygen(_);var n=S(a,e);return M(t),n}function me(e,t,a){var _=[];Y(a),U(_,e,"state_address");var n=K(t=O(_,t,"message_chunk")),s=t.length;_.push(n),0|r._crypto_auth_hmacsha512256_update(e,n,s)&&N(_,"invalid usage"),M(_)}function ke(e,t,a){var _=[];e=O(_,e,"tag");var n,s=0|r._crypto_auth_hmacsha512256_bytes();e.length!==s&&L(_,"invalid tag length"),n=K(e),_.push(n);var c=K(t=O(_,t,"message")),p=t.length;_.push(c),a=O(_,a,"key");var o,h=0|r._crypto_auth_hmacsha512256_keybytes();a.length!==h&&L(_,"invalid key length"),o=K(a),_.push(o);var y=!(0|r._crypto_auth_hmacsha512256_verify(n,c,p,0,o));return M(_),y}function xe(e,t){var a=[];Y(t),U(a,e,"state_address");var _=new B(0|r._crypto_auth_hmacsha512_bytes()),n=_.address;if(a.push(n),!(0|r._crypto_auth_hmacsha512_final(e,n))){var s=(r._free(e),S(_,t));return M(a),s}N(a,"invalid usage")}function Ee(e,t){var a=[];Y(t);var _=null,n=0;null!=e&&(_=K(e=O(a,e,"key")),n=e.length,a.push(_));var s=new B(416).address;if(!(0|r._crypto_auth_hmacsha512_init(s,_,n))){var c=s;return M(a),c}N(a,"invalid usage")}function Te(e){var t=[];Y(e);var a=new B(0|r._crypto_auth_hmacsha512_keybytes()),_=a.address;t.push(_),r._crypto_auth_hmacsha512_keygen(_);var n=S(a,e);return M(t),n}function Se(e,t,a){var _=[];Y(a),U(_,e,"state_address");var n=K(t=O(_,t,"message_chunk")),s=t.length;_.push(n),0|r._crypto_auth_hmacsha512_update(e,n,s)&&N(_,"invalid usage"),M(_)}function we(e,t,a){var _=[];e=O(_,e,"tag");var n,s=0|r._crypto_auth_hmacsha512_bytes();e.length!==s&&L(_,"invalid tag length"),n=K(e),_.push(n);var c=K(t=O(_,t,"message")),p=t.length;_.push(c),a=O(_,a,"key");var o,h=0|r._crypto_auth_hmacsha512_keybytes();a.length!==h&&L(_,"invalid key length"),o=K(a),_.push(o);var y=!(0|r._crypto_auth_hmacsha512_verify(n,c,p,0,o));return M(_),y}function Ye(e){var t=[];Y(e);var a=new B(0|r._crypto_auth_keybytes()),_=a.address;t.push(_),r._crypto_auth_keygen(_);var n=S(a,e);return M(t),n}function Be(e,t,a){var _=[];e=O(_,e,"tag");var n,s=0|r._crypto_auth_bytes();e.length!==s&&L(_,"invalid tag length"),n=K(e),_.push(n);var c=K(t=O(_,t,"message")),p=t.length;_.push(c),a=O(_,a,"key");var o,h=0|r._crypto_auth_keybytes();a.length!==h&&L(_,"invalid key length"),o=K(a),_.push(o);var y=!(0|r._crypto_auth_verify(n,c,p,0,o));return M(_),y}function Ke(e,t,a){var _=[];Y(a),e=O(_,e,"publicKey");var n,s=0|r._crypto_box_publickeybytes();e.length!==s&&L(_,"invalid publicKey length"),n=K(e),_.push(n),t=O(_,t,"privateKey");var c,p=0|r._crypto_box_secretkeybytes();t.length!==p&&L(_,"invalid privateKey length"),c=K(t),_.push(c);var o=new B(0|r._crypto_box_beforenmbytes()),h=o.address;if(_.push(h),!(0|r._crypto_box_beforenm(h,n,c))){var y=S(o,a);return M(_),y}N(_,"invalid usage")}function Ae(e,t,a){var _=[];Y(a),e=O(_,e,"publicKey");var n,s=0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes();e.length!==s&&L(_,"invalid publicKey length"),n=K(e),_.push(n),t=O(_,t,"privateKey");var c,p=0|r._crypto_box_curve25519xchacha20poly1305_secretkeybytes();t.length!==p&&L(_,"invalid privateKey length"),c=K(t),_.push(c);var o=new B(0|r._crypto_box_curve25519xchacha20poly1305_beforenmbytes()),h=o.address;if(_.push(h),!(0|r._crypto_box_curve25519xchacha20poly1305_beforenm(h,n,c))){var y=S(o,a);return M(_),y}N(_,"invalid usage")}function Ie(e,t,a,_,n){var s=[];Y(n);var c=K(e=O(s,e,"message")),p=e.length;s.push(c),t=O(s,t,"nonce");var o,h=0|r._crypto_box_curve25519xchacha20poly1305_noncebytes();t.length!==h&&L(s,"invalid nonce length"),o=K(t),s.push(o),a=O(s,a,"publicKey");var y,i=0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes();a.length!==i&&L(s,"invalid publicKey length"),y=K(a),s.push(y),_=O(s,_,"privateKey");var l,u=0|r._crypto_box_curve25519xchacha20poly1305_secretkeybytes();_.length!==u&&L(s,"invalid privateKey length"),l=K(_),s.push(l);var d=new B(0|p),v=d.address;s.push(v);var g=new B(0|r._crypto_box_curve25519xchacha20poly1305_macbytes()),b=g.address;if(s.push(b),!(0|r._crypto_box_curve25519xchacha20poly1305_detached(v,b,c,p,0,o,y,l))){var f=S({ciphertext:d,mac:g},n);return M(s),f}N(s,"invalid usage")}function Me(e,t,a,_){var n=[];Y(_);var s=K(e=O(n,e,"message")),c=e.length;n.push(s),t=O(n,t,"nonce");var p,o=0|r._crypto_box_curve25519xchacha20poly1305_noncebytes();t.length!==o&&L(n,"invalid nonce length"),p=K(t),n.push(p),a=O(n,a,"sharedKey");var h,y=0|r._crypto_box_curve25519xchacha20poly1305_beforenmbytes();a.length!==y&&L(n,"invalid sharedKey length"),h=K(a),n.push(h);var i=new B(0|c),l=i.address;n.push(l);var u=new B(0|r._crypto_box_curve25519xchacha20poly1305_macbytes()),d=u.address;if(n.push(d),!(0|r._crypto_box_curve25519xchacha20poly1305_detached_afternm(l,d,s,c,0,p,h))){var v=S({ciphertext:i,mac:u},_);return M(n),v}N(n,"invalid usage")}function Ne(e,t,a,_,n){var s=[];Y(n);var c=K(e=O(s,e,"message")),p=e.length;s.push(c),t=O(s,t,"nonce");var o,h=0|r._crypto_box_curve25519xchacha20poly1305_noncebytes();t.length!==h&&L(s,"invalid nonce length"),o=K(t),s.push(o),a=O(s,a,"publicKey");var y,i=0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes();a.length!==i&&L(s,"invalid publicKey length"),y=K(a),s.push(y),_=O(s,_,"privateKey");var l,u=0|r._crypto_box_curve25519xchacha20poly1305_secretkeybytes();_.length!==u&&L(s,"invalid privateKey length"),l=K(_),s.push(l);var d=new B(p+r._crypto_box_curve25519xchacha20poly1305_macbytes()|0),v=d.address;if(s.push(v),!(0|r._crypto_box_curve25519xchacha20poly1305_easy(v,c,p,0,o,y,l))){var g=S(d,n);return M(s),g}N(s,"invalid usage")}function Le(e,t,a,_){var n=[];Y(_);var s=K(e=O(n,e,"message")),c=e.length;n.push(s),t=O(n,t,"nonce");var p,o=0|r._crypto_box_curve25519xchacha20poly1305_noncebytes();t.length!==o&&L(n,"invalid nonce length"),p=K(t),n.push(p),a=O(n,a,"sharedKey");var h,y=0|r._crypto_box_curve25519xchacha20poly1305_beforenmbytes();a.length!==y&&L(n,"invalid sharedKey length"),h=K(a),n.push(h);var i=new B(c+r._crypto_box_curve25519xchacha20poly1305_macbytes()|0),l=i.address;if(n.push(l),!(0|r._crypto_box_curve25519xchacha20poly1305_easy_afternm(l,s,c,0,p,h))){var u=S(i,_);return M(n),u}N(n,"invalid usage")}function Ue(e){var t=[];Y(e);var a=new B(0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes()),_=a.address;t.push(_);var n=new B(0|r._crypto_box_curve25519xchacha20poly1305_secretkeybytes()),s=n.address;t.push(s),r._crypto_box_curve25519xchacha20poly1305_keypair(_,s);var c=S({publicKey:a,privateKey:n,keyType:"curve25519"},e);return M(t),c}function Oe(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"ciphertext")),o=e.length;c.push(p),t=O(c,t,"mac");var h,y=0|r._crypto_box_curve25519xchacha20poly1305_macbytes();t.length!==y&&L(c,"invalid mac length"),h=K(t),c.push(h),a=O(c,a,"nonce");var i,l=0|r._crypto_box_curve25519xchacha20poly1305_noncebytes();a.length!==l&&L(c,"invalid nonce length"),i=K(a),c.push(i),_=O(c,_,"publicKey");var u,d=0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes();_.length!==d&&L(c,"invalid publicKey length"),u=K(_),c.push(u),n=O(c,n,"privateKey");var v,g=0|r._crypto_box_curve25519xchacha20poly1305_secretkeybytes();n.length!==g&&L(c,"invalid privateKey length"),v=K(n),c.push(v);var b=new B(0|o),f=b.address;if(c.push(f),!(0|r._crypto_box_curve25519xchacha20poly1305_open_detached(f,p,h,o,0,i,u,v))){var m=S(b,s);return M(c),m}N(c,"incorrect key pair for the given ciphertext")}function Ce(e,t,a,_,n){var s=[];Y(n);var c=K(e=O(s,e,"ciphertext")),p=e.length;s.push(c),t=O(s,t,"mac");var o,h=0|r._crypto_box_curve25519xchacha20poly1305_macbytes();t.length!==h&&L(s,"invalid mac length"),o=K(t),s.push(o),a=O(s,a,"nonce");var y,i=0|r._crypto_box_curve25519xchacha20poly1305_noncebytes();a.length!==i&&L(s,"invalid nonce length"),y=K(a),s.push(y),_=O(s,_,"sharedKey");var l,u=0|r._crypto_box_curve25519xchacha20poly1305_beforenmbytes();_.length!==u&&L(s,"invalid sharedKey length"),l=K(_),s.push(l);var d=new B(0|p),v=d.address;if(s.push(v),!(0|r._crypto_box_curve25519xchacha20poly1305_open_detached_afternm(v,c,o,p,0,y,l))){var g=S(d,n);return M(s),g}N(s,"incorrect secret key for the given ciphertext")}function Re(e,t,a,_,n){var s=[];Y(n),e=O(s,e,"ciphertext");var c,p=r._crypto_box_curve25519xchacha20poly1305_macbytes(),o=e.length;o<p&&L(s,"ciphertext is too short"),c=K(e),s.push(c),t=O(s,t,"nonce");var h,y=0|r._crypto_box_curve25519xchacha20poly1305_noncebytes();t.length!==y&&L(s,"invalid nonce length"),h=K(t),s.push(h),a=O(s,a,"publicKey");var i,l=0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes();a.length!==l&&L(s,"invalid publicKey length"),i=K(a),s.push(i),_=O(s,_,"privateKey");var u,d=0|r._crypto_box_curve25519xchacha20poly1305_secretkeybytes();_.length!==d&&L(s,"invalid privateKey length"),u=K(_),s.push(u);var v=new B(o-r._crypto_box_curve25519xchacha20poly1305_macbytes()|0),g=v.address;if(s.push(g),!(0|r._crypto_box_curve25519xchacha20poly1305_open_easy(g,c,o,0,h,i,u))){var b=S(v,n);return M(s),b}N(s,"incorrect key pair for the given ciphertext")}function Pe(e,t,a,_){var n=[];Y(_);var s=K(e=O(n,e,"ciphertext")),c=e.length;n.push(s),t=O(n,t,"nonce");var p,o=0|r._crypto_box_curve25519xchacha20poly1305_noncebytes();t.length!==o&&L(n,"invalid nonce length"),p=K(t),n.push(p),a=O(n,a,"sharedKey");var h,y=0|r._crypto_box_curve25519xchacha20poly1305_beforenmbytes();a.length!==y&&L(n,"invalid sharedKey length"),h=K(a),n.push(h);var i=new B(c-r._crypto_box_curve25519xchacha20poly1305_macbytes()|0),l=i.address;if(n.push(l),!(0|r._crypto_box_curve25519xchacha20poly1305_open_easy_afternm(l,s,c,0,p,h))){var u=S(i,_);return M(n),u}N(n,"incorrect secret key for the given ciphertext")}function Xe(e,t,a){var _=[];Y(a);var n=K(e=O(_,e,"message")),s=e.length;_.push(n),t=O(_,t,"publicKey");var c,p=0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes();t.length!==p&&L(_,"invalid publicKey length"),c=K(t),_.push(c);var o=new B(s+r._crypto_box_curve25519xchacha20poly1305_sealbytes()|0),h=o.address;_.push(h),r._crypto_box_curve25519xchacha20poly1305_seal(h,n,s,0,c);var y=S(o,a);return M(_),y}function De(e,t,a,_){var n=[];Y(_),e=O(n,e,"ciphertext");var s,c=r._crypto_box_curve25519xchacha20poly1305_sealbytes(),p=e.length;p<c&&L(n,"ciphertext is too short"),s=K(e),n.push(s),t=O(n,t,"publicKey");var o,h=0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes();t.length!==h&&L(n,"invalid publicKey length"),o=K(t),n.push(o),a=O(n,a,"secretKey");var y,i=0|r._crypto_box_curve25519xchacha20poly1305_secretkeybytes();a.length!==i&&L(n,"invalid secretKey length"),y=K(a),n.push(y);var l=new B(p-r._crypto_box_curve25519xchacha20poly1305_sealbytes()|0),u=l.address;n.push(u),r._crypto_box_curve25519xchacha20poly1305_seal_open(u,s,p,0,o,y);var d=S(l,_);return M(n),d}function Ge(e,t){var a=[];Y(t),e=O(a,e,"seed");var _,n=0|r._crypto_box_curve25519xchacha20poly1305_seedbytes();e.length!==n&&L(a,"invalid seed length"),_=K(e),a.push(_);var s=new B(0|r._crypto_box_curve25519xchacha20poly1305_publickeybytes()),c=s.address;a.push(c);var p=new B(0|r._crypto_box_curve25519xchacha20poly1305_secretkeybytes()),o=p.address;if(a.push(o),!(0|r._crypto_box_curve25519xchacha20poly1305_seed_keypair(c,o,_))){var h={publicKey:S(s,t),privateKey:S(p,t),keyType:"x25519"};return M(a),h}N(a,"invalid usage")}function Fe(e,t,a,_,n){var s=[];Y(n);var c=K(e=O(s,e,"message")),p=e.length;s.push(c),t=O(s,t,"nonce");var o,h=0|r._crypto_box_noncebytes();t.length!==h&&L(s,"invalid nonce length"),o=K(t),s.push(o),a=O(s,a,"publicKey");var y,i=0|r._crypto_box_publickeybytes();a.length!==i&&L(s,"invalid publicKey length"),y=K(a),s.push(y),_=O(s,_,"privateKey");var l,u=0|r._crypto_box_secretkeybytes();_.length!==u&&L(s,"invalid privateKey length"),l=K(_),s.push(l);var d=new B(0|p),v=d.address;s.push(v);var g=new B(0|r._crypto_box_macbytes()),b=g.address;if(s.push(b),!(0|r._crypto_box_detached(v,b,c,p,0,o,y,l))){var f=S({ciphertext:d,mac:g},n);return M(s),f}N(s,"invalid usage")}function Ve(e,t,a,_,n){var s=[];Y(n);var c=K(e=O(s,e,"message")),p=e.length;s.push(c),t=O(s,t,"nonce");var o,h=0|r._crypto_box_noncebytes();t.length!==h&&L(s,"invalid nonce length"),o=K(t),s.push(o),a=O(s,a,"publicKey");var y,i=0|r._crypto_box_publickeybytes();a.length!==i&&L(s,"invalid publicKey length"),y=K(a),s.push(y),_=O(s,_,"privateKey");var l,u=0|r._crypto_box_secretkeybytes();_.length!==u&&L(s,"invalid privateKey length"),l=K(_),s.push(l);var d=new B(p+r._crypto_box_macbytes()|0),v=d.address;if(s.push(v),!(0|r._crypto_box_easy(v,c,p,0,o,y,l))){var g=S(d,n);return M(s),g}N(s,"invalid usage")}function qe(e,t,a,_){var n=[];Y(_);var s=K(e=O(n,e,"message")),c=e.length;n.push(s),t=O(n,t,"nonce");var p,o=0|r._crypto_box_noncebytes();t.length!==o&&L(n,"invalid nonce length"),p=K(t),n.push(p),a=O(n,a,"sharedKey");var h,y=0|r._crypto_box_beforenmbytes();a.length!==y&&L(n,"invalid sharedKey length"),h=K(a),n.push(h);var i=new B(c+r._crypto_box_macbytes()|0),l=i.address;if(n.push(l),!(0|r._crypto_box_easy_afternm(l,s,c,0,p,h))){var u=S(i,_);return M(n),u}N(n,"invalid usage")}function He(e){var t=[];Y(e);var a=new B(0|r._crypto_box_publickeybytes()),_=a.address;t.push(_);var n=new B(0|r._crypto_box_secretkeybytes()),s=n.address;if(t.push(s),!(0|r._crypto_box_keypair(_,s))){var c={publicKey:S(a,e),privateKey:S(n,e),keyType:"x25519"};return M(t),c}N(t,"internal error")}function ze(e,t,a,_,n,s){var c=[];Y(s);var p=K(e=O(c,e,"ciphertext")),o=e.length;c.push(p),t=O(c,t,"mac");var h,y=0|r._crypto_box_macbytes();t.length!==y&&L(c,"invalid mac length"),h=K(t),c.push(h),a=O(c,a,"nonce");var i,l=0|r._crypto_box_noncebytes();a.length!==l&&L(c,"invalid nonce length"),i=K(a),c.push(i),_=O(c,_,"publicKey");var u,d=0|r._crypto_box_publickeybytes();_.length!==d&&L(c,"invalid publicKey length"),u=K(_),c.push(u),n=O(c,n,"privateKey");var v,g=0|r._crypto_box_secretkeybytes();n.length!==g&&L(c,"invalid privateKey length"),v=K(n),c.push(v);var b=new B(0|o),f=b.address;if(c.push(f),!(0|r._crypto_box_open_detached(f,p,h,o,0,i,u,v))){var m=S(b,s);return M(c),m}N(c,"incorrect key pair for the given ciphertext")}function We(e,t,a,_,n){var s=[];Y(n),e=O(s,e,"ciphertext");var c,p=r._crypto_box_macbytes(),o=e.length;o<p&&L(s,"ciphertext is too short"),c=K(e),s.push(c),t=O(s,t,"nonce");var h,y=0|r._crypto_box_noncebytes();t.length!==y&&L(s,"invalid nonce length"),h=K(t),s.push(h),a=O(s,a,"publicKey");var i,l=0|r._crypto_box_publickeybytes();a.length!==l&&L(s,"invalid publicKey length"),i=K(a),s.push(i),_=O(s,_,"privateKey");var u,d=0|r._crypto_box_secretkeybytes();_.length!==d&&L(s,"invalid privateKey length"),u=K(_),s.push(u);var v=new B(o-r._crypto_box_macbytes()|0),g=v.address;if(s.push(g),!(0|r._crypto_box_open_easy(g,c,o,0,h,i,u))){var b=S(v,n);return M(s),b}N(s,"incorrect key pair for the given ciphertext")}function je(e,t,a,_){var n=[];Y(_);var s=K(e=O(n,e,"ciphertext")),c=e.length;n.push(s),t=O(n,t,"nonce");var p,o=0|r._crypto_box_noncebytes();t.length!==o&&L(n,"invalid nonce length"),p=K(t),n.push(p),a=O(n,a,"sharedKey");var h,y=0|r._crypto_box_beforenmbytes();a.length!==y&&L(n,"invalid sharedKey length"),h=K(a),n.push(h);var i=new B(c-r._crypto_box_macbytes()|0),l=i.address;if(n.push(l),!(0|r._crypto_box_open_easy_afternm(l,s,c,0,p,h))){var u=S(i,_);return M(n),u}N(n,"incorrect secret key for the given ciphertext")}function Je(e,t,a){var _=[];Y(a);var n=K(e=O(_,e,"message")),s=e.length;_.push(n),t=O(_,t,"publicKey");var c,p=0|r._crypto_box_publickeybytes();t.length!==p&&L(_,"invalid publicKey length"),c=K(t),_.push(c);var o=new B(s+r._crypto_box_sealbytes()|0),h=o.address;if(_.push(h),!(0|r._crypto_box_seal(h,n,s,0,c))){var y=S(o,a);return M(_),y}N(_,"invalid usage")}function Qe(e,t,a,_){var n=[];Y(_),e=O(n,e,"ciphertext");var s,c=r._crypto_box_sealbytes(),p=e.length;p<c&&L(n,"ciphertext is too short"),s=K(e),n.push(s),t=O(n,t,"publicKey");var o,h=0|r._crypto_box_publickeybytes();t.length!==h&&L(n,"invalid publicKey length"),o=K(t),n.push(o),a=O(n,a,"privateKey");var y,i=0|r._crypto_box_secretkeybytes();a.length!==i&&L(n,"invalid privateKey length"),y=K(a),n.push(y);var l=new B(p-r._crypto_box_sealbytes()|0),u=l.address;if(n.push(u),!(0|r._crypto_box_seal_open(u,s,p,0,o,y))){var d=S(l,_);return M(n),d}N(n,"incorrect key pair for the given ciphertext")}function Ze(e,t){var a=[];Y(t),e=O(a,e,"seed");var _,n=0|r._crypto_box_seedbytes();e.length!==n&&L(a,"invalid seed length"),_=K(e),a.push(_);var s=new B(0|r._crypto_box_publickeybytes()),c=s.address;a.push(c);var p=new B(0|r._crypto_box_secretkeybytes()),o=p.address;if(a.push(o),!(0|r._crypto_box_seed_keypair(c,o,_))){var h={publicKey:S(s,t),privateKey:S(p,t),keyType:"x25519"};return M(a),h}N(a,"invalid usage")}function $e(e,t,a){var _=[];Y(a),e=O(_,e,"p");var n,s=0|r._crypto_core_ed25519_bytes();e.length!==s&&L(_,"invalid p length"),n=K(e),_.push(n),t=O(_,t,"q");var c,p=0|r._crypto_core_ed25519_bytes();t.length!==p&&L(_,"invalid q length"),c=K(t),_.push(c);var o=new B(0|r._crypto_core_ed25519_bytes()),h=o.address;if(_.push(h),!(0|r._crypto_core_ed25519_add(h,n,c))){var y=S(o,a);return M(_),y}N(_,"input is an invalid element")}function er(e,t){var a=[];Y(t);var _=K(e=O(a,e,"r"));e.length,a.push(_);var n=new B(0|r._crypto_core_ed25519_bytes()),s=n.address;if(a.push(s),!(0|r._crypto_core_ed25519_from_hash(s,_))){var c=S(n,t);return M(a),c}N(a,"invalid usage")}function rr(e,t){var a=[];Y(t);var _=K(e=O(a,e,"r"));e.length,a.push(_);var n=new B(0|r._crypto_core_ed25519_bytes()),s=n.address;if(a.push(s),!(0|r._crypto_core_ed25519_from_uniform(s,_))){var c=S(n,t);return M(a),c}N(a,"invalid usage")}function tr(e,t){var a=[];Y(t),e=O(a,e,"repr");var _,n=0|r._crypto_core_ed25519_bytes();e.length!==n&&L(a,"invalid repr length"),_=K(e),a.push(_);var s=1==(0|r._crypto_core_ed25519_is_valid_point(_));return M(a),s}function ar(e){var t=[];Y(e);var a=new B(0|r._crypto_core_ed25519_bytes()),_=a.address;t.push(_),r._crypto_core_ed25519_random(_);var n=S(a,e);return M(t),n}function _r(e,t,a){var _=[];Y(a),e=O(_,e,"x");var n,s=0|r._crypto_core_ed25519_scalarbytes();e.length!==
+test (18.x)	Run crypto tests	2026-08-16T16:24:52.3820847Z ##[error]Process completed with exit code 1.
+test (18.x)	Post Install pnpm	﻿2026-08-16T16:24:52.3914124Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (18.x)	Post Install pnpm	2026-08-16T16:24:52.3915305Z Post job cleanup.
+test (18.x)	Post Install pnpm	2026-08-16T16:24:52.5400047Z Pruning is unnecessary.
+test (18.x)	Post Run actions/checkout@v4	﻿2026-08-16T16:24:52.5573470Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.5574950Z Post job cleanup.
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6477038Z [command]/usr/bin/git version
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6558257Z git version 2.54.0
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6598969Z Temporarily overriding HOME='/home/runner/work/_temp/b533ce7a-0979-4268-b22b-288766f80b40' before making global git config changes
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6600413Z Adding repository directory to the temporary git global config as a safe directory
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6604662Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ghostlink/ghostlink
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6646310Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6686740Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6956301Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6987074Z http.https://github.com/.extraheader
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.6999161Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.7038768Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.7312683Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test (18.x)	Post Run actions/checkout@v4	2026-08-16T16:24:52.7355107Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test (18.x)	Complete job	﻿2026-08-16T16:24:52.7822719Z Cleaning up orphan processes
+test (18.x)	Complete job	2026-08-16T16:24:52.8113887Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, pnpm/action-setup@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

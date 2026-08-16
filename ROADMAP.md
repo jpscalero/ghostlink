@@ -21,9 +21,9 @@ Ejemplo: v0.0.1.0 → v0.0.1.1 → ... → v0.0.1.9 → v0.0.2.0
 | Versión | Nombre | Qué se implementa |
 |:---|:---|:---|
 | **v0.0.0.1** | Libsodium Init | Carga WASM de libsodium.js, helpers básicos, `package.json` |
-| **v0.0.0.2** | Keypairs | Ed25519 (firma) + X25519 (DH) + PreKeys (100 one-time) |
-| **v0.0.0.3** | Identidad | GhostLink ID `GL-XXXX-XXXX-XXXX-XXXX`, recovery phrase 24 palabras BIP39, cifrado passphrase Argon2id |
-| **v0.0.0.4** | X3DH | Handshake: invitación → respuesta → Triple DH → Master Secret via HKDF |
+| **v0.0.0.2** | Electron MVP | [PIVOT] App base, chat UI (HTML/CSS), Relay server WebSocket local, Diffie-Hellman manual |
+| **v0.0.0.3** | Keypairs X3DH | Identity Key (Ed25519) + Signed PreKey (X25519) + 100 One-Time PreKeys |
+| **v0.0.0.4** | Identidad | GhostLink ID `GL-XXXX-XXXX-XXXX-XXXX`, recovery phrase 24 palabras BIP39, cifrado passphrase Argon2id |
 | **v0.0.0.5** | Double Ratchet | Symmetric ratchet (KDF chain) + DH ratchet (re-keying) + XChaCha20-Poly1305 + mensajes desordenados |
 | **v0.0.0.6** | IndexedDB Cifrada | DB wrapper, schemas (identities, contacts, sessions, messages, settings), cifrado transparente |
 | **v0.0.0.7** | WebRTC P2P | RTCPeerConnection + DataChannel + ICE + SDP + protocolo binario |

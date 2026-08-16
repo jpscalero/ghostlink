@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>GhostLink v0.0.0.2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>👻 GhostLink</h1>
+        <span class="badge">v0.0.0.2</span>
+      </div>
+      
+      <div class="keys-section">
+        <h3>Tu Identidad (X25519)</h3>
+        <p class="subtitle">Comparte esta clave pública con tu contacto para establecer una conexión segura.</p>
+        <div class="key-box">
+          <input type="text" id="myPublicKey" readonly>
+          <button id="copyMyKeyBtn">Copiar</button>
+        </div>
+      </div>
+
+      <div class="connection-section">
+        <h3>Conectar con Contacto</h3>
+        <p class="subtitle">Pega la clave pública de tu contacto para derivar el secreto compartido.</p>
+        <div class="key-box">
+          <input type="text" id="contactPublicKey" placeholder="Clave pública del contacto...">
+          <button id="connectBtn">Conectar</button>
+        </div>
+        <div id="connectionStatus" class="status-indicator">🔴 Desconectado</div>
+      </div>
+    </aside>
+
+    <main class="chat-area">
+      <div class="chat-header">
+        <h2>Chat Privado</h2>
+        <span class="encryption-badge">🔒 XChaCha20-Poly1305 E2EE</span>
+      </div>
+      
+      <div class="messages" id="messagesContainer">
+        <div class="system-message">
+          Generando claves criptográficas locales...
+        </div>
+      </div>
+
+      <div class="input-area">
+        <input type="text" id="messageInput" placeholder="Escribe un mensaje cifrado..." disabled>
+        <button id="sendBtn" disabled>Enviar</button>
+      </div>
+    </main>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
