@@ -1,6 +1,6 @@
 # 🔒 GhostLink
 
-![Version](https://img.shields.io/badge/version-v0.0.0.1-blue)
+![Version](https://img.shields.io/badge/version-v0.0.0.3-blue)
 [![CI](https://github.com/jpscalero/ghostlink/actions/workflows/ci.yml/badge.svg)](https://github.com/jpscalero/ghostlink/actions/workflows/ci.yml)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
@@ -10,15 +10,22 @@ GhostLink es una aplicación de mensajería cifrada de extremo a extremo que fun
 
 ---
 
-## 🚀 Estado Actual: v0.0.0.2 (Electron MVP)
+## 🚀 Estado Actual: v0.0.0.3 (X3DH Keypairs)
 
-En esta versión (**v0.0.0.2**), hemos dado el gran salto: pasamos de ser un motor criptográfico ciego en consola, a tener una **interfaz gráfica nativa de escritorio** 100% funcional.
+En esta versión (**v0.0.0.3**), hemos implementado el sistema de bundles de claves **X3DH** (Extended Triple Diffie-Hellman), el mismo protocolo que usa Signal para establecer sesiones cifradas de forma asíncrona.
 
-### 🌟 Novedades principales
+### 🌟 Novedades v0.0.0.3
+- **Identity Key (Ed25519):** Clave permanente que representa la identidad criptográfica del usuario.
+- **Signed PreKey (X25519):** Clave rotativa (cada 7 días), firmada digitalmente por la Identity Key para evitar ataques MITM.
+- **100 One-Time PreKeys (X25519):** Claves efímeras de un solo uso que garantizan *forward secrecy* desde el primer mensaje.
+- **Handshake X3DH completo:** Tanto el lado iniciador como el respondedor derivan el mismo secreto compartido.
+- **Serialización de bundles:** Los bundles públicos se pueden exportar/importar en formato JSON hex.
+
+### 🔧 Novedades v0.0.0.2
 - **App de Escritorio Nativa:** Integración con `Electron` para una experiencia de usuario moderna, oscura y minimalista.
-- **Relay Server Local:** Mini-servidor de WebSockets integrado para enrutamiento de paquetes en tiempo real.
-- **Chat E2EE Funcional:** Generación de claves `X25519` automáticas, derivación de secreto compartido mediante Diffie-Hellman, y cifrado con `XChaCha20-Poly1305` directamente en el cliente.
-- **Modo Notas Personales:** Chat privado contigo mismo para guardar notas cifradas de forma local.
+- **Relay Server:** Mini-servidor de WebSockets para enrutamiento de paquetes en tiempo real (local o en la nube).
+- **Chat E2EE Funcional:** Generación de claves `X25519` automáticas, derivación de secreto compartido mediante Diffie-Hellman, y cifrado con `XChaCha20-Poly1305`.
+- **Modo Notas Personales:** Chat privado contigo mismo para guardar notas cifradas.
 
 ---
 
@@ -71,8 +78,11 @@ Si prefieres no usar el servidor en la nube y ejecutar tu propia infraestructura
 - `src/main.js`: Proceso principal de Electron (creación de ventanas).
 - `src/renderer.js`: Proceso de renderizado (UI, cliente WebSocket y orquestación).
 - `src/relay.js`: Servidor Node.js ligero para enrutamiento de mensajes (WebSocket).
-- `src/crypto/`: Motor criptográfico central (claves, derivación y cifrado E2E).
-- `tests/`: Pruebas criptográficas automatizadas.
+- `src/crypto/`: Motor criptográfico central.
+  - `helpers.js`: Funciones base (cifrado, firma, DH, hashing, encoding).
+  - `x3dh-keystore.js`: Sistema de bundles X3DH (Identity Key + Signed PreKey + OPKs).
+  - `sodium-init.js`: Singleton de inicialización de libsodium WASM.
+- `tests/`: Pruebas automatizadas (crypto + X3DH).
 
 ---
 

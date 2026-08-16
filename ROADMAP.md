@@ -378,3 +378,42 @@ Ejemplo: v0.0.1.0 → v0.0.1.1 → ... → v0.0.1.9 → v0.0.2.0
 | RC | v0.1.0.0 → v0.9.0.9 | **90** | Android + BLE + WiFi + Grupos + Voz + Vault + Sync + CI/CD + i18n |
 | Release | v1.0.0.0 | **1** | Auditoría + Polish + Documentación + Launch |
 | | | **190** | **Total de versiones** |
+
+---
+
+# 🌌 ERA BEYOND — Visionary Backlog (v2.0.0.0+)
+
+> Funcionalidades avanzadas inspiradas en protocolos de vanguardia (como SimpleX) que se integrarán gradualmente una vez alcanzada la versión 1.0 estable, o que se adelantarán si la comunidad lo requiere.
+
+## 🔐 Criptografía y Privacidad Extrema
+- [ ] **Intercambio de claves Post-Cuántico:** Integrar algoritmos resistentes a computación cuántica en el Double Ratchet.
+- [ ] **Enrutamiento por Tor (Onion):** Conexión a los servidores de mensajería a través de servicios ocultos v3.
+- [ ] **Relay de entrega para remitentes:** Ocultar la dirección IP del remitente a los servidores de los destinatarios.
+- [ ] **Modo Incógnito:** Compartir un nombre aleatorio nuevo con cada contacto.
+- [ ] **Verificación Out-of-band:** Verificación de contactos a través de un canal externo separado.
+- [ ] **Contraseña de acceso alternativa (Duress PIN):** Contraseña falsa que borra los datos o muestra perfiles vacíos en caso de coacción.
+
+## 📡 Servidores y Ecosistema
+- [ ] **Servidor SimpleX-like:** Servidor fácil de desplegar con almacenamiento de mensajes en RAM, sin dependencias.
+- [ ] **Despliegue 1-click:** Scripts para desplegar el servidor en VPS (Linode, Oracle, DigitalOcean) en un clic.
+- [ ] **SDK Typescript & Bots:** SDK completo para desarrollar interfaces, integraciones y bots de chat.
+- [ ] **Plantillas para bots en Haskell/Rust:** Plantillas base para la creación de bots autónomos.
+- [ ] **Autenticación básica para servidores:** Autorizar quién puede crear nuevas colas en tu servidor privado.
+
+## 📱 Funcionalidades de Chat Avanzadas
+- [x] **Notas Privadas:** Chat contigo mismo *(¡Implementado en v0.0.0.2!)*.
+- [x] **Mensajes Efímeros:** *(Planificado para v0.6.0)*.
+- [ ] **Historial de edición de mensajes:** Ver las versiones anteriores de un mensaje editado.
+- [ ] **Mensajes "Live":** Mensajes que se actualizan en tiempo real mientras el usuario escribe.
+- [ ] **Archivos grandes (XFTP):** Servidor de archivos para optimizar el envío privado de archivos muy grandes.
+- [ ] **Mensajes de vídeo:** Grabación rápida de vídeos circulares.
+- [ ] **Confirmación de entrega:** Con opción (opt-out) por cada contacto para no enviar el acuse.
+- [ ] **Reducción de consumo en grupos:** Optimizar el uso de batería y tráfico de red en grupos grandes.
+- [ ] **Grupos masivos y Canales públicos:** Estructura escalable para comunidades.
+- [ ] **Enlaces cortos (Short links):** URLs acortadas para conectarse o unirse a grupos rápidamente.
+
+## 🖥️ Multi-Perfil y Accesibilidad
+- [ ] **Perfiles múltiples:** Manejar varias identidades (Personal, Trabajo, Secreto) en la misma base de datos.
+- [ ] **Perfiles ocultos:** Identidades que no aparecen en la interfaz hasta introducir un PIN específico.
+- [ ] **Soporte Legacy:** Compatibilidad con SO Android antiguos y CPUs de 32 bits.
+- [ ] **Conexiones TCP independientes:** Evitar reutilizar la misma sesión TCP para múltiples conexiones (Anti-Traffic Analysis).
