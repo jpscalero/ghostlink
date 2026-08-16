@@ -1,6 +1,6 @@
 import { WebSocketServer } from 'ws';
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 const wss = new WebSocketServer({ port });
 
 console.log(`[Relay] 🟢 Servidor WebSocket iniciado en el puerto ${port}`);
