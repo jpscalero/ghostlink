@@ -4,6 +4,9 @@
   "description": "GhostLink — Ultra-private encrypted messenger with offline capability",
   "main": "src/main.js",
   "type": "module",
+  "engines": {
+    "node": ">=19"
+  },
   "scripts": {
     "start": "electron .",
     "relay": "node src/relay.js",
