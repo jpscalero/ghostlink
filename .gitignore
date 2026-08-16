@@ -2,5 +2,7 @@ node_modules/
 dist/
 .env
 *.log
+*.log.txt
+run_log.*
 .DS_Store
 Thumbs.db
