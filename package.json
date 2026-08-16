@@ -1,0 +1,32 @@
+{
+  "name": "ghostlink",
+  "version": "0.0.0.1",
+  "description": "GhostLink — Ultra-private encrypted messenger with offline capability",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/test-sodium.js",
+    "test:all": "node tests/test-sodium.js"
+  },
+  "keywords": [
+    "messenger",
+    "encrypted",
+    "e2ee",
+    "private",
+    "offline",
+    "bluetooth",
+    "p2p",
+    "double-ratchet",
+    "x3dh",
+    "libsodium"
+  ],
+  "author": "jpscalero",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpscalero/ghostlink"
+  },
+  "dependencies": {
+    "libsodium-wrappers-sumo": "^0.8.4"
+  }
+}
