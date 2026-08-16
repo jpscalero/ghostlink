@@ -56,13 +56,11 @@ connectBtn.addEventListener('click', () => {
     // 2. Conectar al WebSocket Relay
     connectWebSocket();
     
-    // UI Update
+    // UI Update (esperando)
     contactPublicKeyInput.disabled = true;
     connectBtn.disabled = true;
     personalChatBtn.disabled = true;
-    connectBtn.innerText = "Conectado";
-    messageInput.disabled = false;
-    sendBtn.disabled = false;
+    connectBtn.innerText = "Conectando...";
     
   } catch (error) {
     addSystemMessage(`Error de conexión: ${error.message}`);
@@ -77,7 +75,12 @@ messageInput.addEventListener('keypress', (e) => {
 
 function sendMessage() {
   const text = messageInput.value.trim();
-  if (!text || !sharedSecret || !ws || ws.readyState !== WebSocket.OPEN) return;
+  if (!text || !sharedSecret || !ws) return;
+  
+  if (ws.readyState !== WebSocket.OPEN) {
+    addSystemMessage("Aún no hay conexión con el servidor. Espera a que esté 'Conectado'.");
+    return;
+  }
   
   try {
     // Cifrar el mensaje
@@ -103,16 +106,25 @@ function sendMessage() {
 }
 
 function connectWebSocket() {
-  ws = new WebSocket('ws://localhost:8080');
+  ws = new WebSocket('wss://ghostlink-2pwd.onrender.com');
   
   ws.onopen = () => {
     connectionStatus.innerText = "🟢 Conectado (E2EE)";
     connectionStatus.classList.add('connected');
+    connectBtn.innerText = "Conectado";
+    messageInput.disabled = false;
+    sendBtn.disabled = false;
+    messageInput.focus();
+    addSystemMessage("Conexión establecida con el servidor.");
   };
   
-  ws.onmessage = (event) => {
+  ws.onmessage = async (event) => {
     try {
-      const data = JSON.parse(event.data);
+      let dataText = event.data;
+      if (dataText instanceof Blob) {
+        dataText = await dataText.text();
+      }
+      const data = JSON.parse(dataText);
       if (data.c && data.n) {
         // Descifrar mensaje recibido
         const plaintext = window.ghostCrypto.decryptMessage(data.c, data.n, sharedSecret);
@@ -123,9 +135,17 @@ function connectWebSocket() {
     }
   };
   
+  ws.onerror = (error) => {
+    console.error("WebSocket error:", error);
+    addSystemMessage("Error en la conexión WebSocket.");
+  };
+  
   ws.onclose = () => {
     connectionStatus.innerText = "🔴 Desconectado";
     connectionStatus.classList.remove('connected');
+    connectBtn.innerText = "Desconectado";
+    messageInput.disabled = true;
+    sendBtn.disabled = true;
     addSystemMessage("Conexión perdida con el relay.");
   };
 }
