@@ -22,7 +22,7 @@ async function initializeApp() {
   myKeyPair = window.ghostCrypto.generateDHKeyPair();
   
   myPublicKeyInput.value = myKeyPair.publicKey;
-  addSystemMessage("¡Listo! Esperando conexión.");
+  addSystemMessage("¡Listo! Tu clave pública está generada. Compártela con tu contacto.");
 }
 
 // Botón Copiar
@@ -37,33 +37,32 @@ copyMyKeyBtn.addEventListener('click', () => {
 personalChatBtn.addEventListener('click', () => {
   contactPublicKeyInput.value = myPublicKeyInput.value;
   connectBtn.click();
-  addSystemMessage("📝 Modo Notas Personales activado. Los mensajes se cifran con tu propia clave y se envían a ti mismo.");
+  addSystemMessage("📝 Modo Notas Personales activado.");
 });
 
 // Botón Conectar (Intercambio de claves y conexión WS)
 connectBtn.addEventListener('click', () => {
   const contactKey = contactPublicKeyInput.value.trim();
   if (contactKey.length !== 64) {
-    alert("La clave pública del contacto debe tener 64 caracteres hex.");
+    addSystemMessage("⚠️ La clave pública del contacto debe tener 64 caracteres hex. Tiene " + contactKey.length + ".");
     return;
   }
 
   try {
     // 1. Derivar el Secreto Compartido
     sharedSecret = window.ghostCrypto.deriveSharedSecret(myKeyPair.privateKey, contactKey);
-    addSystemMessage("Secreto compartido derivado correctamente. Cifrado E2EE activado.");
+    addSystemMessage("🔑 Secreto compartido derivado. Hash: " + sharedSecret.substring(0, 8) + "...");
     
     // 2. Conectar al WebSocket Relay
-    connectWebSocket();
-    
-    // UI Update (esperando)
     contactPublicKeyInput.disabled = true;
     connectBtn.disabled = true;
     personalChatBtn.disabled = true;
     connectBtn.innerText = "Conectando...";
+    addSystemMessage("📡 Conectando al relay (puede tardar si el servidor está arrancando)...");
+    connectWebSocket();
     
   } catch (error) {
-    addSystemMessage(`Error de conexión: ${error.message}`);
+    addSystemMessage(`❌ Error al derivar secreto: ${error.message}`);
   }
 });
 
@@ -75,10 +74,14 @@ messageInput.addEventListener('keypress', (e) => {
 
 function sendMessage() {
   const text = messageInput.value.trim();
-  if (!text || !sharedSecret || !ws) return;
+  if (!text) return;
   
-  if (ws.readyState !== WebSocket.OPEN) {
-    addSystemMessage("Aún no hay conexión con el servidor. Espera a que esté 'Conectado'.");
+  if (!sharedSecret) {
+    addSystemMessage("⚠️ No hay secreto compartido. Pega la clave de tu contacto y conecta primero.");
+    return;
+  }
+  if (!ws || ws.readyState !== WebSocket.OPEN) {
+    addSystemMessage("⚠️ WebSocket no está conectado (estado: " + (ws ? ws.readyState : "null") + "). Espera...");
     return;
   }
   
@@ -101,12 +104,21 @@ function sendMessage() {
     
   } catch (error) {
     console.error("Error al cifrar:", error);
-    addSystemMessage("Error interno al cifrar mensaje.");
+    addSystemMessage("❌ Error interno al cifrar: " + error.message);
   }
 }
 
 function connectWebSocket() {
-  ws = new WebSocket('wss://ghostlink-2pwd.onrender.com');
+  const url = 'wss://ghostlink-2pwd.onrender.com';
+  
+  try {
+    ws = new WebSocket(url);
+  } catch (err) {
+    addSystemMessage("❌ No se pudo crear el WebSocket: " + err.message);
+    return;
+  }
+  
+  ws.binaryType = 'text';
   
   ws.onopen = () => {
     connectionStatus.innerText = "🟢 Conectado (E2EE)";
@@ -115,15 +127,24 @@ function connectWebSocket() {
     messageInput.disabled = false;
     sendBtn.disabled = false;
     messageInput.focus();
-    addSystemMessage("Conexión establecida con el servidor.");
+    addSystemMessage("✅ Conexión establecida con el relay. Ya puedes enviar mensajes.");
   };
   
   ws.onmessage = async (event) => {
     try {
-      let dataText = event.data;
-      if (dataText instanceof Blob) {
-        dataText = await dataText.text();
+      // Manejar tanto string como Blob
+      let dataText;
+      if (typeof event.data === 'string') {
+        dataText = event.data;
+      } else if (event.data instanceof Blob) {
+        dataText = await event.data.text();
+      } else if (event.data instanceof ArrayBuffer) {
+        dataText = new TextDecoder().decode(event.data);
+      } else {
+        // Buffer u otro tipo
+        dataText = event.data.toString();
       }
+      
       const data = JSON.parse(dataText);
       if (data.c && data.n) {
         // Descifrar mensaje recibido
@@ -132,21 +153,30 @@ function connectWebSocket() {
       }
     } catch (error) {
       console.error("Error al descifrar paquete entrante:", error);
+      addSystemMessage("⚠️ Se recibió un paquete pero falló el descifrado: " + error.message);
     }
   };
   
   ws.onerror = (error) => {
     console.error("WebSocket error:", error);
-    addSystemMessage("Error en la conexión WebSocket.");
+    addSystemMessage("❌ Error en la conexión WebSocket.");
   };
   
-  ws.onclose = () => {
+  ws.onclose = (event) => {
     connectionStatus.innerText = "🔴 Desconectado";
     connectionStatus.classList.remove('connected');
     connectBtn.innerText = "Desconectado";
     messageInput.disabled = true;
     sendBtn.disabled = true;
-    addSystemMessage("Conexión perdida con el relay.");
+    addSystemMessage("🔴 Conexión perdida (código: " + event.code + ", razón: " + (event.reason || "ninguna") + "). Reintentando en 3s...");
+    
+    // Reconexión automática
+    setTimeout(() => {
+      if (sharedSecret) {
+        addSystemMessage("📡 Reintentando conexión...");
+        connectWebSocket();
+      }
+    }, 3000);
   };
 }
 
