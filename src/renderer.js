@@ -4,6 +4,7 @@ const copyMyKeyBtn = document.getElementById('copyMyKeyBtn');
 const contactPublicKeyInput = document.getElementById('contactPublicKey');
 const connectBtn = document.getElementById('connectBtn');
 const connectionStatus = document.getElementById('connectionStatus');
+const personalChatBtn = document.getElementById('personalChatBtn');
 const messagesContainer = document.getElementById('messagesContainer');
 const messageInput = document.getElementById('messageInput');
 const sendBtn = document.getElementById('sendBtn');
@@ -32,6 +33,13 @@ copyMyKeyBtn.addEventListener('click', () => {
   setTimeout(() => { copyMyKeyBtn.innerText = originalText; }, 2000);
 });
 
+// Botón Chat Personal (Notas)
+personalChatBtn.addEventListener('click', () => {
+  contactPublicKeyInput.value = myPublicKeyInput.value;
+  connectBtn.click();
+  addSystemMessage("📝 Modo Notas Personales activado. Los mensajes se cifran con tu propia clave y se envían a ti mismo.");
+});
+
 // Botón Conectar (Intercambio de claves y conexión WS)
 connectBtn.addEventListener('click', () => {
   const contactKey = contactPublicKeyInput.value.trim();
@@ -51,6 +59,7 @@ connectBtn.addEventListener('click', () => {
     // UI Update
     contactPublicKeyInput.disabled = true;
     connectBtn.disabled = true;
+    personalChatBtn.disabled = true;
     connectBtn.innerText = "Conectado";
     messageInput.disabled = false;
     sendBtn.disabled = false;

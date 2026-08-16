@@ -92,6 +92,25 @@ h3 {
   background-color: #3a3a3a;
 }
 
+.personal-btn {
+  margin-top: 15px;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #aaa;
+  border: 1px dashed #333;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.personal-btn:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+  border-color: #555;
+}
+
 .status-indicator {
   margin-top: 15px;
   font-size: 0.85rem;

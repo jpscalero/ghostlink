@@ -6,43 +6,19 @@ GhostLink es una aplicación de mensajería cifrada de extremo a extremo que fun
 
 ---
 
-## 🚀 Estado Actual: v0.0.0.1 (Crypto Engine)
+## 🚀 Estado Actual: v0.0.0.2 (Electron MVP)
 
-En esta primera versión (**v0.0.0.1**), se ha establecido el cimiento fundamental de la aplicación: el **Motor Criptográfico**. 
-Se ha implementado una capa de abstracción robusta y de alto nivel sobre `libsodium` (compilado a WebAssembly para máximo rendimiento y portabilidad).
+En esta versión (**v0.0.0.2**), hemos dado el gran salto: pasamos de ser un motor criptográfico ciego en consola, a tener una **interfaz gráfica nativa de escritorio** 100% funcional.
 
-### 🛠️ Proceso de Implementación
-
-1. **Inicialización (Singleton):** Se creó un inicializador asíncrono para garantizar que el módulo WASM de `libsodium` se cargue correctamente antes de cualquier operación.
-2. **Generación de Claves:**
-   - **Ed25519** para firmas digitales (autenticación).
-   - **X25519** para intercambio de claves (Diffie-Hellman).
-3. **Cifrado Simétrico Autenticado (AEAD):** Implementación de **XChaCha20-Poly1305**, el estándar moderno que previene la manipulación de datos cifrados.
-4. **Hashing y KDF:**
-   - **SHA-256** y **BLAKE2b** para comprobaciones de integridad.
-   - **Argon2id** para derivar claves seguras a partir de contraseñas humanas (resistente a ataques de fuerza bruta por GPU/ASIC).
-   - **HKDF** para expandir y derivar material de claves (esencial para el futuro protocolo *Double Ratchet*).
-5. **Testing Exhaustivo:** Se programó una batería de **55 tests** (`tests/test-sodium.js`) que validan desde la longitud de las claves generadas, hasta el flujo completo de derivar una clave desde una contraseña, cifrar un mensaje y descifrarlo simulando un reinicio de la aplicación. (Todos los tests pasan con éxito 55/55).
-
-### 📂 Estructura del Código
-
-```text
-ghostlink/
-├── src/
-│   └── crypto/
-│       ├── sodium-init.js    # Singleton para inicializar libsodium.js WASM
-│       └── helpers.js        # Wrappers criptográficos (Firmas, AEAD, KDF, DH, Hashing)
-├── tests/
-│   └── test-sodium.js        # Suite de 55 tests de validación criptográfica
-├── package.json              # Configuración del proyecto y scripts (pnpm)
-└── ROADMAP.md                # (Próximamente) Plan granular de las 190 versiones
-```
+### 🌟 Novedades principales
+- **App de Escritorio Nativa:** Integración con `Electron` para una experiencia de usuario moderna, oscura y minimalista.
+- **Relay Server Local:** Mini-servidor de WebSockets integrado para enrutamiento de paquetes en tiempo real.
+- **Chat E2EE Funcional:** Generación de claves `X25519` automáticas, derivación de secreto compartido mediante Diffie-Hellman, y cifrado con `XChaCha20-Poly1305` directamente en el cliente.
+- **Modo Notas Personales:** Chat privado contigo mismo para guardar notas cifradas de forma local.
 
 ---
 
 ## 💻 Instalación y Uso (Desarrollo)
-
-Por el momento, GhostLink es un motor criptográfico backend. Puedes instalarlo y probar las primitivas de cifrado.
 
 ### Prerrequisitos
 - **Node.js** (v18 o superior)
@@ -55,42 +31,29 @@ cd ghostlink
 pnpm install
 ```
 
-### 2. Ejecutar la Batería de Tests
-Para comprobar que el motor criptográfico funciona correctamente en tu entorno:
+### 2. Ejecutar la Aplicación
+
+Para poder probar el chat, necesitas arrancar primero el servidor de enrutamiento (Relay) y luego los clientes (App).
+
+**Paso A: Arrancar el Servidor Relay**
+Abre una terminal nueva y ejecuta:
 ```bash
-pnpm test
+pnpm run relay
 ```
-Verás la salida del test suite verificando inicialización, cifrado simétrico, firmas Ed25519, hashing, Argon2id, HKDF y conversiones.
+*(Debe aparecer el mensaje "Servidor Relay escuchando en puerto 8080")*
 
-### 3. Uso en tu propio código (Ejemplo)
-Puedes importar el motor y usar las primitivas de forma sencilla:
-
-```javascript
-import { 
-  initCrypto, 
-  deriveKeyFromPassphrase, 
-  encrypt, 
-  decryptToString 
-} from './src/crypto/helpers.js';
-
-async function demo() {
-  // 1. Inicializar siempre primero
-  await initCrypto();
-
-  // 2. Derivar una clave segura de una contraseña
-  const { key, salt } = deriveKeyFromPassphrase("MiContraseñaSecreta");
-
-  // 3. Cifrar un mensaje
-  const { ciphertext, nonce } = encrypt("Hola GhostLink, mensaje ultra secreto", key);
-  console.log("Cifrado:", ciphertext);
-
-  // 4. Descifrar el mensaje
-  const mensaje = decryptToString(ciphertext, nonce, key);
-  console.log("Descifrado:", mensaje);
-}
-
-demo();
+**Paso B: Arrancar los Clientes**
+Abre **dos terminales nuevas** (una para cada cliente simulado) y en cada una ejecuta:
+```bash
+pnpm start
 ```
+
+### 3. ¿Cómo chatear?
+1. Verás que se abren dos ventanas de GhostLink.
+2. En la Ventana 1, pulsa "Copiar mi clave".
+3. En la Ventana 2, pega esa clave en la casilla superior y pulsa "Conectar".
+4. ¡Listo! Todo lo que escribas estará cifrado de extremo a extremo de forma militar.
+*(Si solo quieres tomar notas cifradas para ti mismo, puedes pulsar el botón "📝 Notas Personales").*
 
 ---
 
