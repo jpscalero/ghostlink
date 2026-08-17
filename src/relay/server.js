@@ -1,6 +1,8 @@
 import { WebSocketServer } from 'ws';
 import { RateLimiter } from './rate-limiter.js';
 import { MessageStore } from './store.js';
+import { randomBytes, verify } from '../crypto/helpers.js';
+import { getSodium } from '../crypto/sodium-init.js';
 
 export class RelayServer {
   constructor(options = {}) {
@@ -11,9 +13,10 @@ export class RelayServer {
     this.storeAndForwardTTL = options.storeAndForwardTTL || (7 * 24 * 60 * 60 * 1000);
     this.maxStoredMessagesPerUser = options.maxStoredMessagesPerUser || 1000;
     this.maxPayloadSize = options.maxPayloadSize || (64 * 1024);
+    this.challengeTimeout = options.challengeTimeout || 10000;
 
     this.wss = null;
-    this.clients = new Map(); // ws -> { publicKey, ip }
+    this.clients = new Map(); // ws -> { ip, publicKey, pendingChallenge }
     this.ipConnectionCounts = new Map(); // ip -> count
     this.pubKeyToWs = new Map(); // publicKey -> ws
 
@@ -24,12 +27,12 @@ export class RelayServer {
     this.startTime = null;
   }
 
-  start() {
+  async start() {
+    await getSodium();
     this.wss = new WebSocketServer({ port: this.port });
     this.startTime = Date.now();
 
     this.wss.on('connection', (ws, req) => {
-      // 1. IP connection limit
       const ip = req.socket.remoteAddress || 'unknown';
       const currentConns = this.ipConnectionCounts.get(ip) || 0;
       
@@ -39,10 +42,9 @@ export class RelayServer {
       }
       
       this.ipConnectionCounts.set(ip, currentConns + 1);
-      this.clients.set(ws, { ip, publicKey: null });
+      this.clients.set(ws, { ip, publicKey: null, pendingChallenge: null });
 
       ws.on('message', (message, isBinary) => {
-        // Payload size limit
         if (message.length > this.maxPayloadSize) {
           ws.close(1009, 'Message Too Big');
           return;
@@ -62,8 +64,7 @@ export class RelayServer {
           return;
         }
 
-        // Rate limit applies to all except "ping" and "register"
-        if (data.type !== 'ping' && data.type !== 'register') {
+        if (data.type !== 'ping' && data.type !== 'register' && data.type !== 'register-proof') {
           if (!this.rateLimiter.consume(ip)) {
             ws.send(JSON.stringify({ type: 'error', code: 'RATE_LIMIT', message: 'Too many messages' }));
             return;
@@ -76,8 +77,9 @@ export class RelayServer {
       ws.on('close', () => {
         const clientInfo = this.clients.get(ws);
         if (clientInfo) {
-          const { ip, publicKey } = clientInfo;
-          // Decrement IP count
+          const { ip, publicKey, pendingChallenge } = clientInfo;
+          if (pendingChallenge && pendingChallenge.timer) clearTimeout(pendingChallenge.timer);
+          
           const count = this.ipConnectionCounts.get(ip);
           if (count > 1) {
             this.ipConnectionCounts.set(ip, count - 1);
@@ -93,7 +95,6 @@ export class RelayServer {
       });
     });
 
-    // Cleanup interval (every hour)
     this.cleanupInterval = setInterval(() => {
       this.messageStore.cleanup(this.storeAndForwardTTL);
     }, 60 * 60 * 1000);
@@ -116,13 +117,56 @@ export class RelayServer {
           return;
         }
         
-        clientInfo.publicKey = data.publicKey;
-        this.pubKeyToWs.set(data.publicKey, ws);
+        const nonce = randomBytes(32);
+        const nonceHex = Buffer.from(nonce).toString('hex');
         
-        ws.send(JSON.stringify({ type: 'registered', publicKey: data.publicKey }));
+        clientInfo.pendingChallenge = {
+          nonce: nonceHex,
+          publicKey: data.publicKey,
+          timer: setTimeout(() => {
+            if (this.clients.has(ws)) {
+              ws.close(1008, 'Challenge Timeout');
+            }
+          }, this.challengeTimeout)
+        };
         
-        // Deliver stored messages
-        const stored = this.messageStore.retrieve(data.publicKey);
+        ws.send(JSON.stringify({ type: 'challenge', nonce: nonceHex }));
+        break;
+
+      case 'register-proof':
+        if (!clientInfo.pendingChallenge) {
+          ws.send(JSON.stringify({ type: 'error', code: 'NO_CHALLENGE' }));
+          return;
+        }
+        
+        const { nonce: chalNonce, publicKey: chalPk, timer } = clientInfo.pendingChallenge;
+        clearTimeout(timer);
+        clientInfo.pendingChallenge = null;
+
+        if (!data.signature || typeof data.signature !== 'string') {
+          ws.send(JSON.stringify({ type: 'error', code: 'INVALID_PROOF' }));
+          ws.close(1008, 'Invalid Proof');
+          return;
+        }
+
+        try {
+          const isValid = verify(
+            Buffer.from(chalNonce, 'hex'),
+            Buffer.from(data.signature, 'hex'),
+            Buffer.from(chalPk, 'hex')
+          );
+          if (!isValid) throw new Error('Invalid');
+        } catch (e) {
+          ws.send(JSON.stringify({ type: 'error', code: 'INVALID_PROOF' }));
+          ws.close(1008, 'Invalid Proof');
+          return;
+        }
+
+        clientInfo.publicKey = chalPk;
+        this.pubKeyToWs.set(chalPk, ws);
+        ws.send(JSON.stringify({ type: 'registered', publicKey: chalPk }));
+        
+        const stored = this.messageStore.retrieve(chalPk);
         if (stored && stored.length > 0) {
           ws.send(JSON.stringify({ type: 'stored', messages: stored }));
         }
@@ -133,8 +177,12 @@ export class RelayServer {
           ws.send(JSON.stringify({ type: 'error', code: 'NOT_REGISTERED' }));
           return;
         }
-        const peers = Array.from(this.pubKeyToWs.keys()).filter(pk => pk !== publicKey);
-        ws.send(JSON.stringify({ type: 'peers', peers }));
+        if (!Array.isArray(data.check)) {
+          ws.send(JSON.stringify({ type: 'error', code: 'INVALID_CHECK_ARRAY' }));
+          return;
+        }
+        const online = data.check.filter(pk => typeof pk === 'string' && this.pubKeyToWs.has(pk));
+        ws.send(JSON.stringify({ type: 'presence', online }));
         break;
 
       case 'message':
@@ -151,7 +199,6 @@ export class RelayServer {
         const targetWs = this.pubKeyToWs.get(data.to);
         
         if (targetWs && targetWs.readyState === 1) { // OPEN
-          // Deliver directly
           const forwardData = { ...data, from: publicKey };
           targetWs.send(JSON.stringify(forwardData));
           
@@ -159,7 +206,6 @@ export class RelayServer {
             ws.send(JSON.stringify({ type: 'ack', id: data.id || 'unknown' }));
           }
         } else {
-          // Offline
           if (data.type === 'message') {
             const success = this.messageStore.store(data.to, { ...data, from: publicKey });
             if (success) {
@@ -168,7 +214,6 @@ export class RelayServer {
               ws.send(JSON.stringify({ type: 'error', code: 'STORE_FULL' }));
             }
           }
-          // Si es 'signal', se descarta por requerimiento
         }
         break;
 

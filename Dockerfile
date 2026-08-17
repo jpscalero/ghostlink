@@ -4,5 +4,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN corepack enable && pnpm install --prod --frozen-lockfile
 COPY src/relay/ ./src/relay/
 COPY src/relay.js ./src/relay.js
+RUN addgroup -S ghostlink && adduser -S ghostlink -G ghostlink
+USER ghostlink
 EXPOSE 8080
 CMD ["node", "src/relay.js"]
