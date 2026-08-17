@@ -1,6 +1,6 @@
 # 🔒 GhostLink
 
-![Version](https://img.shields.io/badge/version-v0.0.0.6-blue)
+![Version](https://img.shields.io/badge/version-v0.0.0.7-blue)
 [![CI](https://github.com/jpscalero/ghostlink/actions/workflows/ci.yml/badge.svg)](https://github.com/jpscalero/ghostlink/actions/workflows/ci.yml)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
@@ -10,11 +10,19 @@ GhostLink es una aplicación de mensajería cifrada de extremo a extremo que fun
 
 ---
 
-## 🚀 Estado Actual: v0.0.0.6 (IndexedDB Cifrada)
+## 📡 Estado Actual: v0.0.0.7 (WebRTC P2P)
 
-En esta versión (**v0.0.0.6**), hemos completado el core criptográfico implementando el **Double Ratchet** y una capa de persistencia **100% cifrada E2E** sobre IndexedDB.
+En esta versión (**v0.0.0.7**), hemos incorporado la capa de red directa Peer-to-Peer utilizando WebRTC DataChannels. Tras el apretón de manos inicial vía el servidor Relay, el tráfico de mensajes se enruta directamente entre los usuarios.
 
-### 🌟 Novedades v0.0.0.6 (IndexedDB Cifrada)
+### 🌐 Novedades v0.0.0.7 (WebRTC P2P)
+- **DataChannels:** Conexión de baja latencia `RTCDataChannel` para mensajería.
+- **Señalización Automática:** Negociación SDP e ICE candidates transparente sobre el WebSocket relay.
+- **Fallback Automático:** Si falla el P2P, los mensajes viajan por el relay.
+
+> [!NOTE]
+> **Limitación de Red (STUN vs TURN)**: El transporte P2P actual utiliza únicamente servidores STUN públicos para descubrir direcciones IP, y **no incluye** un servidor TURN de retransmisión. Por lo tanto, los usuarios que estén detrás de un NAT simétrico o redes muy restrictivas (redes corporativas, algunas operadoras con CGNAT) no lograrán establecer una conexión P2P real y el sistema permanecerá en modo relay de forma permanente (como *fallback*). Esto es un comportamiento correcto y esperado, y se solucionará en futuras versiones permitiendo la configuración de un TURN self-hosted.
+
+### 🗄️ Novedades v0.0.0.6 (IndexedDB Cifrada)
 - **Persistencia Segura:** Capa wrapper sobre IndexedDB para almacenar identidades, contactos, sesiones y mensajes.
 - **Cifrado Total:** Todos los payloads se cifran con `XChaCha20-Poly1305` antes de escribirse a disco.
 - **Derivación de Clave de DB:** La clave de la base de datos se deriva de la passphrase del usuario mediante `Argon2id`.
