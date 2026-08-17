@@ -39,6 +39,21 @@ export function generateSigningKeyPair() {
 }
 
 /**
+ * Genera un keypair Ed25519 determinístico a partir de una seed de 32 bytes.
+ * La misma seed siempre produce el mismo keypair.
+ * @param {Uint8Array} seed - Seed de 32 bytes
+ * @returns {{ publicKey: Uint8Array, privateKey: Uint8Array }}
+ */
+export function generateSigningKeyPairFromSeed(seed) {
+  const sodium = requireSodium();
+  const kp = sodium.crypto_sign_seed_keypair(seed);
+  return {
+    publicKey: kp.publicKey,
+    privateKey: kp.privateKey,
+  };
+}
+
+/**
  * Genera un keypair X25519 para Diffie-Hellman key exchange.
  * @returns {{ publicKey: Uint8Array, privateKey: Uint8Array }}
  */
