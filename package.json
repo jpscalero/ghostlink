@@ -1,6 +1,6 @@
 {
   "name": "ghostlink",
-  "version": "0.0.0.7",
+  "version": "0.0.0.8",
   "description": "GhostLink — Ultra-private encrypted messenger with offline capability",
   "main": "src/main.js",
   "type": "module",
@@ -15,7 +15,8 @@
     "test:identity": "node tests/test-identity.js",
     "test:ratchet": "node tests/test-double-ratchet.js",
     "test:db": "node tests/test-encrypted-db.js",
-    "test:all": "node tests/test-sodium.js && node tests/test-x3dh-keystore.js && node tests/test-identity.js && node tests/test-double-ratchet.js && node tests/test-encrypted-db.js && node tests/test-webrtc-transport.js",
+    "test:relay": "node tests/test-relay.js",
+    "test:all": "node tests/test-sodium.js && node tests/test-x3dh-keystore.js && node tests/test-identity.js && node tests/test-double-ratchet.js && node tests/test-encrypted-db.js && node tests/test-webrtc-transport.js && node tests/test-relay.js",
     "test:webrtc": "node tests/test-webrtc-transport.js"
   },
   "keywords": [
