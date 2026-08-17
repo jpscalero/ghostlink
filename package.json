@@ -10,7 +10,7 @@
   "scripts": {
     "start": "electron .",
     "relay": "node src/relay.js",
-    "test": "node tests/test-sodium.js",
+    "test": "npm run test:all",
     "test:x3dh": "node tests/test-x3dh-keystore.js",
     "test:identity": "node tests/test-identity.js",
     "test:ratchet": "node tests/test-double-ratchet.js",
