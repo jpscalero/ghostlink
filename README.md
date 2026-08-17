@@ -1,6 +1,6 @@
 # 🔒 GhostLink
 
-![Version](https://img.shields.io/badge/version-v0.0.0.3-blue)
+![Version](https://img.shields.io/badge/version-v0.0.0.6-blue)
 [![CI](https://github.com/jpscalero/ghostlink/actions/workflows/ci.yml/badge.svg)](https://github.com/jpscalero/ghostlink/actions/workflows/ci.yml)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
@@ -10,16 +10,29 @@ GhostLink es una aplicación de mensajería cifrada de extremo a extremo que fun
 
 ---
 
-## 🚀 Estado Actual: v0.0.0.3 (X3DH Keypairs)
+## 🚀 Estado Actual: v0.0.0.6 (IndexedDB Cifrada)
 
-En esta versión (**v0.0.0.3**), hemos implementado el sistema de bundles de claves **X3DH** (Extended Triple Diffie-Hellman), el mismo protocolo que usa Signal para establecer sesiones cifradas de forma asíncrona.
+En esta versión (**v0.0.0.6**), hemos completado el core criptográfico implementando el **Double Ratchet** y una capa de persistencia **100% cifrada E2E** sobre IndexedDB.
 
-### 🌟 Novedades v0.0.0.3
-- **Identity Key (Ed25519):** Clave permanente que representa la identidad criptográfica del usuario.
-- **Signed PreKey (X25519):** Clave rotativa (cada 7 días), firmada digitalmente por la Identity Key para evitar ataques MITM.
-- **100 One-Time PreKeys (X25519):** Claves efímeras de un solo uso que garantizan *forward secrecy* desde el primer mensaje.
-- **Handshake X3DH completo:** Tanto el lado iniciador como el respondedor derivan el mismo secreto compartido.
-- **Serialización de bundles:** Los bundles públicos se pueden exportar/importar en formato JSON hex.
+### 🌟 Novedades v0.0.0.6 (IndexedDB Cifrada)
+- **Persistencia Segura:** Capa wrapper sobre IndexedDB para almacenar identidades, contactos, sesiones y mensajes.
+- **Cifrado Total:** Todos los payloads se cifran con `XChaCha20-Poly1305` antes de escribirse a disco.
+- **Derivación de Clave de DB:** La clave de la base de datos se deriva de la passphrase del usuario mediante `Argon2id`.
+
+### 🌟 Novedades v0.0.0.5 (Double Ratchet)
+- **Forward Secrecy:** Implementación del protocolo Double Ratchet de Signal. Cada mensaje emplea una clave única.
+- **Break-in Recovery:** DH Ratchet para re-sincronizar el material criptográfico y recuperarse ante el compromiso de una clave.
+- **Manejo de Desorden:** Capacidad de almacenar *message keys* para descifrar mensajes que llegan fuera de orden.
+
+### 🌟 Novedades v0.0.0.4 (Identidad & BIP39)
+- **GhostLink ID:** Identificador único derivado determinísticamente del hash de la clave pública (ej. `GL-A3F1-B2C4-D5E6-F789`).
+- **Recovery Phrase (BIP39):** Generación de entropía y recuperación de identidad mediante frase de 24 palabras.
+- **Cifrado de Clave Privada:** La identidad se guarda cifrada en disco, requiriendo la *passphrase* maestra para operar.
+
+### 🔧 Novedades v0.0.0.3 (X3DH Keystore)
+- **Identity Key (Ed25519) & Signed PreKey (X25519)**
+- **100 One-Time PreKeys (X25519)** para Forward Secrecy inicial.
+- **Handshake X3DH completo** con derivación del *shared secret*.
 
 ### 🔧 Novedades v0.0.0.2
 - **App de Escritorio Nativa:** Integración con `Electron` para una experiencia de usuario moderna, oscura y minimalista.
