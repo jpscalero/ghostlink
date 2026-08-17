@@ -11,7 +11,7 @@ function createWindow() {
     height: 700,
     minWidth: 800,
     minHeight: 600,
-    title: "GhostLink v0.0.0.2 - Basic Private Chat",
+    title: "GhostLink v0.0.0.6 - Basic Private Chat",
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: false,
