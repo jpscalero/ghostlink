@@ -44,3 +44,32 @@ contextBridge.exposeInMainWorld('ghostCrypto', {
     return decryptToString(ciphertext, nonce, sharedSecret);
   }
 });
+
+import { SignalingAdapter } from './net/signaling-adapter.js';
+import { WebRTCTransport } from './net/webrtc-transport.js';
+
+let _adapter = null;
+let _transport = null;
+
+contextBridge.exposeInMainWorld('ghostNet', {
+  connectP2P: (url, onStateChange, onMessage, onOpen) => {
+    _adapter = new SignalingAdapter(url);
+    _transport = new WebRTCTransport(_adapter);
+
+    _transport.onStateChange((state) => onStateChange(state));
+    _transport.onMessage((msg) => onMessage(msg));
+    
+    _adapter.onOpen = () => {
+      if (onOpen) onOpen();
+    };
+  },
+  createOffer: async () => {
+    if (_transport) await _transport.createOffer();
+  },
+  send: (payload) => {
+    if (_transport) _transport.send(payload);
+  },
+  getState: () => {
+    return _transport ? _transport.getState() : 'disconnected';
+  }
+});
