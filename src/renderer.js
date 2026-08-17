@@ -1,3 +1,6 @@
+import { SignalingAdapter } from './net/signaling-adapter.js';
+import { WebRTCTransport } from './net/webrtc-transport.js';
+
 // Referencias al DOM
 const myPublicKeyInput = document.getElementById('myPublicKey');
 const copyMyKeyBtn = document.getElementById('copyMyKeyBtn');
@@ -11,7 +14,8 @@ const sendBtn = document.getElementById('sendBtn');
 
 let myKeyPair = null;
 let sharedSecret = null;
-let ws = null;
+let adapter = null;
+let transport = null;
 
 // Inicialización
 async function initializeApp() {
@@ -37,7 +41,7 @@ copyMyKeyBtn.addEventListener('click', () => {
 personalChatBtn.addEventListener('click', () => {
   contactPublicKeyInput.value = myPublicKeyInput.value;
   connectBtn.click();
-  addSystemMessage("📝 Modo Notas Personales activado.");
+  addSystemMessage("🗒️ Modo Notas Personales activado.");
 });
 
 // Botón Conectar (Intercambio de claves y conexión WS)
@@ -51,14 +55,14 @@ connectBtn.addEventListener('click', () => {
   try {
     // 1. Derivar el Secreto Compartido
     sharedSecret = window.ghostCrypto.deriveSharedSecret(myKeyPair.privateKey, contactKey);
-    addSystemMessage("🔑 Secreto compartido derivado. Hash: " + sharedSecret.substring(0, 8) + "...");
+    addSystemMessage("✅ Secreto compartido derivado. Hash: " + sharedSecret.substring(0, 8) + "...");
     
     // 2. Conectar al WebSocket Relay
     contactPublicKeyInput.disabled = true;
     connectBtn.disabled = true;
     personalChatBtn.disabled = true;
     connectBtn.innerText = "Conectando...";
-    addSystemMessage("📡 Conectando al relay (puede tardar si el servidor está arrancando)...");
+    addSystemMessage("🔄 Conectando al relay (puede tardar si el servidor está arrancando)...");
     connectWebSocket();
     
   } catch (error) {
@@ -80,8 +84,8 @@ function sendMessage() {
     addSystemMessage("⚠️ No hay secreto compartido. Pega la clave de tu contacto y conecta primero.");
     return;
   }
-  if (!ws || ws.readyState !== WebSocket.OPEN) {
-    addSystemMessage("⚠️ WebSocket no está conectado (estado: " + (ws ? ws.readyState : "null") + "). Espera...");
+  if (!transport || (transport.getState() !== 'connected-relay' && transport.getState() !== 'connected-p2p')) {
+    addSystemMessage("⚠️ Transport no está conectado. Espera...");
     return;
   }
   
@@ -95,8 +99,8 @@ function sendMessage() {
       n: encrypted.nonce
     });
     
-    // Enviar por relay
-    ws.send(payload);
+    // Enviar por transport (P2P o Relay fallback)
+    transport.send(payload);
     
     // Mostrar en UI
     addMessageToUI(text, true);
@@ -109,75 +113,83 @@ function sendMessage() {
 }
 
 function connectWebSocket() {
-  const url = 'wss://ghostlink-2pwd.onrender.com';
+  const url = 'ws://localhost:8080';
   
   try {
-    ws = new WebSocket(url);
+    adapter = new SignalingAdapter(url);
+    transport = new WebRTCTransport(adapter);
+    
+    transport.onStateChange((state) => {
+      const timestamp = new Date().toISOString().substring(11, 19);
+      console.log(`[${timestamp}] WebRTC State Change: ${state}`);
+      
+      switch(state) {
+        case 'connecting':
+          connectionStatus.innerText = "🔴 Conectando...";
+          connectionStatus.title = "";
+          connectionStatus.className = "status-indicator";
+          connectBtn.innerText = "Conectando...";
+          break;
+        case 'connected-relay':
+          connectionStatus.innerText = "🟡 Vía Relay";
+          connectionStatus.title = "Tus mensajes van cifrados igualmente, pero pasan por el servidor relay";
+          connectionStatus.className = "status-indicator connected-relay";
+          connectBtn.innerText = "Conectado";
+          messageInput.disabled = false;
+          sendBtn.disabled = false;
+          messageInput.focus();
+          break;
+        case 'connected-p2p':
+          connectionStatus.innerText = "🟢 Conexión Directa (P2P)";
+          connectionStatus.title = "Conexión directa con tu contacto, sin pasar por ningún servidor";
+          connectionStatus.className = "status-indicator connected";
+          connectBtn.innerText = "Conectado P2P";
+          messageInput.disabled = false;
+          sendBtn.disabled = false;
+          messageInput.focus();
+          break;
+        case 'disconnected':
+          connectionStatus.innerText = "⚪ Desconectado";
+          connectionStatus.title = "";
+          connectionStatus.className = "status-indicator";
+          connectBtn.innerText = "Desconectado";
+          messageInput.disabled = true;
+          sendBtn.disabled = true;
+          
+          setTimeout(() => {
+            if (sharedSecret) {
+              addSystemMessage("🔄 Reintentando conexión...");
+              connectWebSocket();
+            }
+          }, 3000);
+          break;
+      }
+    });
+
+    transport.onMessage(async (dataText) => {
+      try {
+        const data = JSON.parse(dataText);
+        if (data.c && data.n) {
+          // Descifrar mensaje recibido
+          const plaintext = window.ghostCrypto.decryptMessage(data.c, data.n, sharedSecret);
+          addMessageToUI(plaintext, false);
+        }
+      } catch (error) {
+        console.error("Error al descifrar paquete entrante:", error);
+        addSystemMessage("⚠️ Se recibió un paquete pero falló el descifrado: " + error.message);
+      }
+    });
+    
+    // Cuando el SignalingAdapter se abre, iniciamos la negociación de la offer
+    adapter.onOpen = () => {
+      addSystemMessage("✅ Conexión establecida con el relay. Intentando negociar P2P...");
+      transport.createOffer().catch(e => console.error("Error al crear offer:", e));
+    };
+
   } catch (err) {
-    addSystemMessage("❌ No se pudo crear el WebSocket: " + err.message);
+    addSystemMessage("❌ No se pudo crear la conexión: " + err.message);
     return;
   }
-  
-  ws.binaryType = 'text';
-  
-  ws.onopen = () => {
-    connectionStatus.innerText = "🟢 Conectado (E2EE)";
-    connectionStatus.classList.add('connected');
-    connectBtn.innerText = "Conectado";
-    messageInput.disabled = false;
-    sendBtn.disabled = false;
-    messageInput.focus();
-    addSystemMessage("✅ Conexión establecida con el relay. Ya puedes enviar mensajes.");
-  };
-  
-  ws.onmessage = async (event) => {
-    try {
-      // Manejar tanto string como Blob
-      let dataText;
-      if (typeof event.data === 'string') {
-        dataText = event.data;
-      } else if (event.data instanceof Blob) {
-        dataText = await event.data.text();
-      } else if (event.data instanceof ArrayBuffer) {
-        dataText = new TextDecoder().decode(event.data);
-      } else {
-        // Buffer u otro tipo
-        dataText = event.data.toString();
-      }
-      
-      const data = JSON.parse(dataText);
-      if (data.c && data.n) {
-        // Descifrar mensaje recibido
-        const plaintext = window.ghostCrypto.decryptMessage(data.c, data.n, sharedSecret);
-        addMessageToUI(plaintext, false);
-      }
-    } catch (error) {
-      console.error("Error al descifrar paquete entrante:", error);
-      addSystemMessage("⚠️ Se recibió un paquete pero falló el descifrado: " + error.message);
-    }
-  };
-  
-  ws.onerror = (error) => {
-    console.error("WebSocket error:", error);
-    addSystemMessage("❌ Error en la conexión WebSocket.");
-  };
-  
-  ws.onclose = (event) => {
-    connectionStatus.innerText = "🔴 Desconectado";
-    connectionStatus.classList.remove('connected');
-    connectBtn.innerText = "Desconectado";
-    messageInput.disabled = true;
-    sendBtn.disabled = true;
-    addSystemMessage("🔴 Conexión perdida (código: " + event.code + ", razón: " + (event.reason || "ninguna") + "). Reintentando en 3s...");
-    
-    // Reconexión automática
-    setTimeout(() => {
-      if (sharedSecret) {
-        addSystemMessage("📡 Reintentando conexión...");
-        connectWebSocket();
-      }
-    }, 3000);
-  };
 }
 
 // Utilidades UI

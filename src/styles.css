@@ -124,6 +124,10 @@ h3 {
   color: #00ff88;
 }
 
+.status-indicator.connected-relay {
+  color: #ffd700;
+}
+
 .chat-area {
   flex: 1;
   display: flex;
